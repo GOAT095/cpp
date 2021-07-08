@@ -1,6 +1,6 @@
-NAME = nokiapill
+NAME = Contact
 
-SRCS = nokiapill.cpp
+SRCS = Contact.cpp
 
 FLAGS = -Wall -Wextra -Werror
 

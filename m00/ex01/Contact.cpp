@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 16:36:36 by anassif           #+#    #+#             */
-/*   Updated: 2021/07/09 22:36:22 by anassif          ###   ########.fr       */
+/*   Updated: 2021/07/09 22:44:33 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ int main(void)
 			std::cin >> index;
 			if (std::cin.good())
 			{
-				if (index < 1 || index > k)
+				if (index < 1 || index > k - 1)
 					std::cout << "bad index \n";
 				// else
 				// 	this->PrintContactInfo(index);

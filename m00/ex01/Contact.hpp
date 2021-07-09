@@ -18,32 +18,34 @@
 
 class Contact{
     private:
-    int index;
+    // int index;
     std::string first_name;
     std::string last_name;
     std::string nickname;
+    std::string phone_number;
+    std::string darkest;
     public:
     Contact();
-    Contact(int i, std::string first, std::string last, std::string nick){
-        index = i;
-        first_name = first;
-        last_name = last;
-        nickname = nick;
-    };
+    Contact(std::string first, std::string last, std::string nick, std::string phone, std::string darkest);
     ~Contact();
-    const std::string &get_first_name(void)
-    {
-        return first_name;
-    }
+    
+    const std::string get_first_name(void);
     void    set_first_name(const std::string first_name);
-    int get_index(void)
-    {
-        return (index);
-    }
-    void set_index(int index)
-    {
-        this->index = index;
-    }
+
+    const std::string get_last_name(void);
+    void    set_last_name(const std::string first_name);
+
+    const std::string get_nickname(void);
+    void    set_nickname(const std::string first_name);
+
+    const std::string get_phone_number(void);
+    void    set_phone_number(const std::string first_name);
+
+    const std::string get_darkest(void);
+    void    set_darkest(const std::string first_name);
+
+    int get_index(void);
+    void set_index(int index);
 };
 
 #endif

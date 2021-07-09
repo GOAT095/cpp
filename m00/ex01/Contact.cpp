@@ -71,6 +71,8 @@ int main(void)
 	Contact c[8];
 	int i = 0;
 	int j = 0;
+	int k = 0;
+	int index;
 
 	while (1)
 	{
@@ -103,18 +105,16 @@ int main(void)
 			std::getline(std::cin, s); 
 			c[i].set_darkest(s);
 
-			if (i == 7)
-				i = 0;
+			if (i == 7){i = 0;k = 8;}
 			else
 				i++;
 		}
 		else if (s == "SEARCH")
 		{
-			while (j < i || i == 7)
+			while (j < i || k == 8)
 			{
 				
 				std::cout << j + 1 << " | ";
-
 				std::string str (c[j].get_first_name());
 				if (str.length() > 10){std::cout << str.substr(0,9) + "." << " | ";}
 				else{std::cout << c[j].get_first_name() << " | ";}
@@ -135,6 +135,46 @@ int main(void)
 				if (str4.length() > 10){std::cout << str4.substr(0,9) + "." << std::endl;}
 				else{std::cout << c[j].get_darkest() << std::endl;}
 				j++;
+				if (j == 8)
+					break ;
+			}
+			std::cout << "enter the desired index\n";
+			std::getline(std::cin, index);
+			// if (std::getline.good())
+			// {
+			// 	if (index < 0 || index > NumOfContacts)
+			// 		std::cout << Red << "\nOut Of Range\n" << Reset;
+			// 	else
+			// 		this->PrintContactInfo(index);
+			// }
+			// else
+			// {
+			// 	std::cin.clear();
+			// 	std::cin.ignore(2147483647, '\n');
+			// 	std::cout << Red << "Wrong input\n" << Reset;
+			// }
+			else
+			{
+				std::cout << j + 1 << " | ";
+				std::string str (c[j].get_first_name());
+				if (str.length() > 10){std::cout << str.substr(0,9) + "." << " | ";}
+				else{std::cout << c[j].get_first_name() << " | ";}
+
+				std::string str1 (c[j].get_last_name());
+				if (str1.length() > 10){std::cout << str1.substr(0,9) + "." << " | ";}
+				else{std::cout << c[j].get_last_name() << " | ";}
+				
+				std::string str2 (c[j].get_nickname());
+				if (str2.length() > 10){std::cout << str2.substr(0,9) + "." << " | ";}
+				else{std::cout << c[j].get_nickname() << " | ";}
+
+				std::string str3 (c[j].get_phone_number());
+				if (str3.length() > 10){std::cout << str3.substr(0,9) + "." << " | ";}
+				else{std::cout << c[j].get_phone_number() << " | ";}
+
+				std::string str4 (c[j].get_darkest());
+				if (str4.length() > 10){std::cout << str4.substr(0,9) + "." << std::endl;}
+				else{std::cout << c[j].get_darkest() << std::endl;}
 			}
 			j = 0;
 		}

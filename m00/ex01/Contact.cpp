@@ -112,6 +112,9 @@ int main(void)
 		{
 			while (j < i || i == 7)
 			{
+				
+				std::cout << j + 1 << " | ";
+
 				std::string str (c[j].get_first_name());
 				if (str.length() > 10){std::cout << str.substr(0,9) + "." << " | ";}
 				else{std::cout << c[j].get_first_name() << " | ";}
@@ -133,6 +136,7 @@ int main(void)
 				else{std::cout << c[j].get_darkest() << std::endl;}
 				j++;
 			}
+			j = 0;
 		}
 	}
 	return (0);

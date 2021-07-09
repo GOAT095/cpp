@@ -15,26 +15,11 @@
 Contact::Contact()
 {
 }
-Contact::Contact(std::string first, std::string last, std::string nick, std::string phone, std::string dark)
-{
-	first_name = first;
-	last_name = last;
-	nickname = nick;
-	phone_number = phone;
-	darkest = dark;
-}
+
 Contact::~Contact()
 {
-	// std::cout << "i m done" << std::endl;
 }
-// int Contact::get_index(void)
-// {
-// 	return this->index;
-// }
-// void Contact::set_index(int index)
-// {
-// 	this->index = index;
-// }
+
 const std::string Contact::get_first_name(void)
 {
 	return this->first_name;
@@ -100,27 +85,22 @@ int main(void)
 			std::getline(std::cin, s);
 			std::cout << "enter first name\n";
 			std::getline(std::cin, s);
-			std::cout << "s => " << s << std::endl;
 			c[i].set_first_name(s);
 
 			std::cout << "enter last name\n";
 			std::getline(std::cin, s);
-			std::cout << "s => " << s << std::endl;
 			c[i].set_last_name(s);
 
 			std::cout << "enter the nickname\n";
 			std::getline(std::cin, s);
-			std::cout << "s => " << s << std::endl;
 			c[i].set_nickname(s);
 
 			std::cout << "enter the phone number\n";
 			std::getline(std::cin, s);
-			std::cout << "s => " << s << std::endl;
 			c[i].set_phone_number(s);
 
 			std::cout << "enter darkest secret\n";
-			std::getline(std::cin, s);
-			std::cout << "s => " << s << std::endl;
+			std::getline(std::cin, s); 
 			c[i].set_darkest(s);
 
 			if (i == 7)
@@ -130,13 +110,27 @@ int main(void)
 		}
 		else if (s == "SEARCH")
 		{
-			while (j < 8)
+			while (j < i || i == 7)
 			{
-				std::cout << c[j].get_first_name() << " | ";
-				std::cout << c[j].get_last_name() << " | ";
-				std::cout << c[j].get_nickname() << " | ";
-				std::cout << c[j].get_phone_number() << " | ";
-				std::cout << c[j].get_darkest() << std::endl;
+				std::string str (c[j].get_first_name());
+				if (str.length() > 10){std::cout << str.substr(0,9) + "." << " | ";}
+				else{std::cout << c[j].get_first_name() << " | ";}
+
+				std::string str1 (c[j].get_last_name());
+				if (str1.length() > 10){std::cout << str1.substr(0,9) + "." << " | ";}
+				else{std::cout << c[j].get_last_name() << " | ";}
+				
+				std::string str2 (c[j].get_nickname());
+				if (str2.length() > 10){std::cout << str2.substr(0,9) + "." << " | ";}
+				else{std::cout << c[j].get_nickname() << " | ";}
+
+				std::string str3 (c[j].get_phone_number());
+				if (str3.length() > 10){std::cout << str3.substr(0,9) + "." << " | ";}
+				else{std::cout << c[j].get_phone_number() << " | ";}
+
+				std::string str4 (c[j].get_darkest());
+				if (str4.length() > 10){std::cout << str4.substr(0,9) + "." << std::endl;}
+				else{std::cout << c[j].get_darkest() << std::endl;}
 				j++;
 			}
 		}

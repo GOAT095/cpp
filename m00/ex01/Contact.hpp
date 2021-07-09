@@ -18,7 +18,6 @@
 
 class Contact{
     private:
-    // int index;
     std::string first_name;
     std::string last_name;
     std::string nickname;
@@ -26,7 +25,6 @@ class Contact{
     std::string darkest;
     public:
     Contact();
-    Contact(std::string first, std::string last, std::string nick, std::string phone, std::string darkest);
     ~Contact();
     
     const std::string get_first_name(void);

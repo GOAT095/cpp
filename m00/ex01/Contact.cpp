@@ -89,9 +89,7 @@ int main(void)
 		std::cout << "enter a command \"ADD\" \"SEARCH\" \"EXIT\"\n";
 		std::cin >> s;
 		if (s == "EXIT")
-		{
-			std::cout << "program exited properly\n";return (0);
-		}
+		{std::cout << "program exited properly\n";return (0);}
 		else if (s == "ADD")
 		{
 			std::getline(std::cin, s);

@@ -67,19 +67,10 @@ void    Contact::set_darkest(const std::string darkest)
 
 void PrintContactInfo(Contact c)
 {
-
 	std::cout << "first name :" << c.get_first_name() << "\n";
-
-	
 	std::cout << "last name :" << c.get_last_name() << "\n";
-	
-	
 	std::cout << "nickname :" << c.get_nickname() << "\n";
-
-	
 	std::cout << "phone number :" << c.get_phone_number() << "\n";
-
-
 	std::cout << "darkest secret :" << c.get_darkest() << std::endl;
 }
 
@@ -124,39 +115,34 @@ int main(void)
 			std::getline(std::cin, s); 
 			c[i].set_darkest(s);
 			
-			if (i == 7)
-			{
-				i = 0;
-			}
+			if (i == 7){i = 0;}
 			else
 				i++;
 			if (k < 8){k++;}
 		}
 		else if (s == "SEARCH")
 		{
+			std::cout.width(10);std::cout << "index" << "|";
+			std::cout.width(10);std::cout << "first name" << "|";
+			std::cout.width(10);std::cout << "last name" << "|";
+			std::cout.width(10);std::cout << "nickname" << "|" << std::endl;
+
 			while (j < k)
 			{
 				
-				std::cout << j + 1 << "|";
+				std::cout.width(10);std::cout << j + 1 << "|";
 				std::string str (c[j].get_first_name());
 				if (str.length() > 10){std::cout << str.substr(0,9) + "." << "|";}
 				else{std::cout.width(10); std::cout << c[j].get_first_name() << "|";}
 
 				std::string str1 (c[j].get_last_name());
 				if (str1.length() > 10){std::cout << str1.substr(0,9) + "." << "|";}
-				else{std::cout << c[j].get_last_name() << "|";}
+				else{std::cout.width(10);std::cout << c[j].get_last_name() << "|";}
 				
 				std::string str2 (c[j].get_nickname());
-				if (str2.length() > 10){std::cout << str2.substr(0,9) + "." << "|";}
-				else{std::cout << c[j].get_nickname() << "|";}
+				if (str2.length() > 10){std::cout << str2.substr(0,9) + "." << "|" << std::endl;}
+				else{std::cout.width(10);std::cout << c[j].get_nickname() << "|" << std::endl;}
 
-				std::string str3 (c[j].get_phone_number());
-				if (str3.length() > 10){std::cout << str3.substr(0,9) + "." << "|";}
-				else{std::cout << c[j].get_phone_number() << "|";}
-
-				std::string str4 (c[j].get_darkest());
-				if (str4.length() > 10){std::cout << str4.substr(0,9) + "." << std::endl;}
-				else{std::cout << c[j].get_darkest() << std::endl;}
 				j++;
 			}
 			std::cout << "enter the desired index\n";

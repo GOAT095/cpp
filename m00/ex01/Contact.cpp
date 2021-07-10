@@ -65,17 +65,36 @@ void    Contact::set_darkest(const std::string darkest)
 	this->darkest = darkest;
 }
 
+void PrintContactInfo(Contact c)
+{
+
+	std::cout << "first name :" << c.get_first_name() << "\n";
+
+	
+	std::cout << "last name :" << c.get_last_name() << "\n";
+	
+	
+	std::cout << "nickname :" << c.get_nickname() << "\n";
+
+	
+	std::cout << "phone number :" << c.get_phone_number() << "\n";
+
+
+	std::cout << "darkest secret :" << c.get_darkest() << std::endl;
+}
+
 int main(void)
 {
-	std::string s;
+	
 	Contact c[8];
 	int i = 0;
 	int j = 0;
-	int k = 1;
+	int k = 0;
 	int index;
 
 	while (1)
 	{
+		std::string s;
 		std::cout << "enter command\n";
 		std::cin >> s;
 		if (s == "EXIT")
@@ -111,12 +130,11 @@ int main(void)
 			}
 			else
 				i++;
-			if (k != 8){k++;}
-			
+			if (k < 8){k++;}
 		}
 		else if (s == "SEARCH")
 		{
-			while (j < k - 1)
+			while (j < k)
 			{
 				
 				std::cout << j + 1 << " | ";
@@ -140,47 +158,20 @@ int main(void)
 				if (str4.length() > 10){std::cout << str4.substr(0,9) + "." << std::endl;}
 				else{std::cout << c[j].get_darkest() << std::endl;}
 				j++;
-				if (j == 8)
-					break ;
 			}
 			std::cout << "enter the desired index\n";
 			std::cin >> index;
 			if (std::cin.good())
 			{
-				if (index < 1 || index > k - 1)
-					std::cout << "bad index \n";
-				// else
-				// 	this->PrintContactInfo(index);
+				if (index < 1 || index > k)
+				{	std::cout << "bad index \n";}
+				else
+				{PrintContactInfo(c[index - 1]);}
 			}
-			// else
-			// {
-			// 	std::cin.clear();
-			// 	std::cin.ignore(2147483647, '\n');
-			// 	std::cout << Red << "Wrong input\n" << Reset;
-			// }
-			// else
-			// {
-			// 	std::cout << j + 1 << " | ";
-			// 	std::string str (c[j].get_first_name());
-			// 	if (str.length() > 10){std::cout << str.substr(0,9) + "." << " | ";}
-			// 	else{std::cout << c[j].get_first_name() << " | ";}
-
-			// 	std::string str1 (c[j].get_last_name());
-			// 	if (str1.length() > 10){std::cout << str1.substr(0,9) + "." << " | ";}
-			// 	else{std::cout << c[j].get_last_name() << " | ";}
-				
-			// 	std::string str2 (c[j].get_nickname());
-			// 	if (str2.length() > 10){std::cout << str2.substr(0,9) + "." << " | ";}
-			// 	else{std::cout << c[j].get_nickname() << " | ";}
-
-			// 	std::string str3 (c[j].get_phone_number());
-			// 	if (str3.length() > 10){std::cout << str3.substr(0,9) + "." << " | ";}
-			// 	else{std::cout << c[j].get_phone_number() << " | ";}
-
-			// 	std::string str4 (c[j].get_darkest());
-			// 	if (str4.length() > 10){std::cout << str4.substr(0,9) + "." << std::endl;}
-			// 	else{std::cout << c[j].get_darkest() << std::endl;}
-			// }
+			else
+			{
+				std::cout << "bad index\n";
+			}
 			j = 0;
 		}
 	}

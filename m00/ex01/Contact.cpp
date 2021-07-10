@@ -95,7 +95,7 @@ int main(void)
 	while (1)
 	{
 		std::string s;
-		std::cout << "enter command\n";
+		std::cout << "enter a command \"ADD\" \"SEARCH\" \"EXIT\"\n";
 		std::cin >> s;
 		if (s == "EXIT")
 		{
@@ -104,23 +104,23 @@ int main(void)
 		else if (s == "ADD")
 		{
 			std::getline(std::cin, s);
-			std::cout << "enter first name\n";
+			std::cout << "enter first name:";
 			std::getline(std::cin, s);
 			c[i].set_first_name(s);
 
-			std::cout << "enter last name\n";
+			std::cout << "enter last name:";
 			std::getline(std::cin, s);
 			c[i].set_last_name(s);
 
-			std::cout << "enter the nickname\n";
+			std::cout << "enter the nickname:";
 			std::getline(std::cin, s);
 			c[i].set_nickname(s);
 
-			std::cout << "enter the phone number\n";
+			std::cout << "enter the phone number:";
 			std::getline(std::cin, s);
 			c[i].set_phone_number(s);
 
-			std::cout << "enter darkest secret\n";
+			std::cout << "enter darkest secret:";
 			std::getline(std::cin, s); 
 			c[i].set_darkest(s);
 			
@@ -137,22 +137,22 @@ int main(void)
 			while (j < k)
 			{
 				
-				std::cout << j + 1 << " | ";
+				std::cout << j + 1 << "|";
 				std::string str (c[j].get_first_name());
-				if (str.length() > 10){std::cout << str.substr(0,9) + "." << " | ";}
-				else{std::cout << c[j].get_first_name() << " | ";}
+				if (str.length() > 10){std::cout << str.substr(0,9) + "." << "|";}
+				else{std::cout.width(10); std::cout << c[j].get_first_name() << "|";}
 
 				std::string str1 (c[j].get_last_name());
-				if (str1.length() > 10){std::cout << str1.substr(0,9) + "." << " | ";}
-				else{std::cout << c[j].get_last_name() << " | ";}
+				if (str1.length() > 10){std::cout << str1.substr(0,9) + "." << "|";}
+				else{std::cout << c[j].get_last_name() << "|";}
 				
 				std::string str2 (c[j].get_nickname());
-				if (str2.length() > 10){std::cout << str2.substr(0,9) + "." << " | ";}
-				else{std::cout << c[j].get_nickname() << " | ";}
+				if (str2.length() > 10){std::cout << str2.substr(0,9) + "." << "|";}
+				else{std::cout << c[j].get_nickname() << "|";}
 
 				std::string str3 (c[j].get_phone_number());
-				if (str3.length() > 10){std::cout << str3.substr(0,9) + "." << " | ";}
-				else{std::cout << c[j].get_phone_number() << " | ";}
+				if (str3.length() > 10){std::cout << str3.substr(0,9) + "." << "|";}
+				else{std::cout << c[j].get_phone_number() << "|";}
 
 				std::string str4 (c[j].get_darkest());
 				if (str4.length() > 10){std::cout << str4.substr(0,9) + "." << std::endl;}
@@ -170,7 +170,9 @@ int main(void)
 			}
 			else
 			{
-				std::cout << "bad index\n";
+				std::cin.clear();
+       			std::cin.ignore(2147483647, '\n');
+        		std::cout <<"Wrong input\n";
 			}
 			j = 0;
 		}

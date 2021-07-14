@@ -44,8 +44,6 @@ class Contact{
 
     int get_index(void);
     void set_index(int index);
-
-    // PrintContactInfo(Contact c,index);
 };
 
 #endif

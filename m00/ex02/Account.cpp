@@ -113,8 +113,8 @@ bool Account::makeWithdrawal(int withdrawal)
 
 void Account::makeDeposit(int deposit)
 {
-     Account::_displayTimestamp();
-     this->_nbDeposits++;
+    Account::_displayTimestamp();
+    this->_nbDeposits++;
     std::cout << "index:" << this->_accountIndex << ";";
     std::cout << "p_amount:" << this->_amount << ";";
     this->_amount += deposit;

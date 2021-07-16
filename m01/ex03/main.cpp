@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/16 14:40:38 by anassif           #+#    #+#             */
-/*   Updated: 2021/07/16 18:49:23 by anassif          ###   ########.fr       */
+/*   Created: 2021/07/16 18:18:08 by anassif           #+#    #+#             */
+/*   Updated: 2021/07/16 19:04:57 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
+#include "Weapon.hpp"
 
-class Zombie
+int main(void)
 {
-    private:
-        std::string _name;
-    public:
-        Zombie();
-        ~Zombie(void);
-        void announce( void );
-        void setname(std::string name);
-};
-
-Zombie* zombieHorde( int N, std::string name );
+    
+    return 0;
+}

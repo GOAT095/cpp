@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/16 14:40:38 by anassif           #+#    #+#             */
-/*   Updated: 2021/07/16 18:49:23 by anassif          ###   ########.fr       */
+/*   Created: 2021/07/16 18:51:09 by anassif           #+#    #+#             */
+/*   Updated: 2021/07/16 19:06:34 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
+#include "HumanA.hpp"
 
-class Zombie
+HumanA::HumanA(void)
 {
-    private:
-        std::string _name;
-    public:
-        Zombie();
-        ~Zombie(void);
-        void announce( void );
-        void setname(std::string name);
-};
 
-Zombie* zombieHorde( int N, std::string name );
+}
+
+HumanA::~HumanA(void)
+{
+    std::cout << "humanA dead\n";
+}
+
+HumanA::attack()
+{
+    std::cout << this->_name  << " attacks with his " << this->_weapon.getType();
+}

@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/16 14:40:38 by anassif           #+#    #+#             */
-/*   Updated: 2021/07/16 18:49:23 by anassif          ###   ########.fr       */
+/*   Created: 2021/07/16 18:06:48 by anassif           #+#    #+#             */
+/*   Updated: 2021/07/16 18:52:52 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
+#include "Weapon.hpp"
 
-class Zombie
+Weapon::Weapon(void)
 {
-    private:
-        std::string _name;
-    public:
-        Zombie();
-        ~Zombie(void);
-        void announce( void );
-        void setname(std::string name);
-};
+    
+}
 
-Zombie* zombieHorde( int N, std::string name );
+Weapon::~Weapon(void)
+{
+    std::cout << "weapon droppped\n";
+}
+
+std::string Weapon::getType(void) const
+{
+    return this->_type;
+}
+
+void    Weapon::setType(std::string type)
+{
+    this->_type = type;
+}

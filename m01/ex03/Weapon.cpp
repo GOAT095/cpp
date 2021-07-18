@@ -6,15 +6,15 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 18:06:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/07/16 18:52:52 by anassif          ###   ########.fr       */
+/*   Updated: 2021/07/18 21:47:13 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(void)
+Weapon::Weapon(std::string type)
 {
-    
+    this->setType(type);
 }
 
 Weapon::~Weapon(void)
@@ -22,7 +22,7 @@ Weapon::~Weapon(void)
     std::cout << "weapon droppped\n";
 }
 
-std::string Weapon::getType(void) const
+const   std::string &Weapon::getType(void) const
 {
     return this->_type;
 }

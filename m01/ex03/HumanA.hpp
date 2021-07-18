@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 18:49:39 by anassif           #+#    #+#             */
-/*   Updated: 2021/07/16 19:06:31 by anassif          ###   ########.fr       */
+/*   Updated: 2021/07/18 21:22:39 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,11 @@ class HumanA
 {
     private:
         std::string _name;
-        Weapon &_weapon;
+        Weapon &weaponA;
     
     public:
-    HumanA();
+    HumanA(std::string name, Weapon &Weapon);
     ~HumanA();
-    
-    std::string getType(void) const;
-    void    setType(std::string type);
+
     void    attack();
-    
 };

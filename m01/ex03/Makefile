@@ -1,4 +1,4 @@
-NAME = Zombie
+NAME = Unnecessary_violence
 
 SRCS = Weapon.cpp main.cpp HumanB.cpp HumanA.cpp
 

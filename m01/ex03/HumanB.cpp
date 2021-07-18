@@ -6,23 +6,29 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 18:51:43 by anassif           #+#    #+#             */
-/*   Updated: 2021/07/16 19:04:55 by anassif          ###   ########.fr       */
+/*   Updated: 2021/07/18 21:42:54 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-humanB::humanB(void)
+HumanB::HumanB(std::string name)
 {
-    
+    this->_name = name;
+    // this->_weapon = Weapon;
 }
 
-humanB::~humanB(void)
+HumanB::~HumanB(void)
 {
-    std::cout << "humanB dead\n";
+    std::cout << "humanA dead\n";
 }
 
-HumanB::attack()
+void HumanB::attack()
 {
-    std::cout << this->_name  << " attacks with his " << this->_weapon->getType();
+    std::cout << this->_name  << " attacks with his " << this->weaponB->getType() << std::endl;
+}
+
+void    HumanB::setWeapon(Weapon &weaponB)
+{
+    this->weaponB = &weaponB;
 }

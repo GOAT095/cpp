@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 18:51:09 by anassif           #+#    #+#             */
-/*   Updated: 2021/07/18 21:22:36 by anassif          ###   ########.fr       */
+/*   Updated: 2021/07/26 20:47:02 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 HumanA::HumanA(std::string name, Weapon &Weapon) : weaponA(Weapon)
 {
     this->_name = name;
-    // this->_weapon = Weapon;
+    // this->weaponA = Weapon;
 }
 
 HumanA::~HumanA(void)

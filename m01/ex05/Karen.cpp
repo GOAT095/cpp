@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 16:03:38 by anassif           #+#    #+#             */
-/*   Updated: 2021/07/28 16:44:42 by anassif          ###   ########.fr       */
+/*   Updated: 2021/07/31 15:23:29 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Karen::Karen()
 
 Karen::~Karen()
 {
-    
+    std::cout << "RIP Karen 2021\n";
 }
 
 void    Karen::debug(void)

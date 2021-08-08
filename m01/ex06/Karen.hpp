@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/28 16:38:27 by anassif           #+#    #+#             */
-/*   Updated: 2021/07/31 15:22:49 by anassif          ###   ########.fr       */
+/*   Created: 2021/07/28 16:05:50 by anassif           #+#    #+#             */
+/*   Updated: 2021/08/04 00:45:15 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#pragma once
+#include <iostream>
 
-int main()
+class Karen
 {
-    Karen k;
-    k.complain("DEBUG");
-    k.complain("INFO");
-    k.complain("WARNING");
-    k.complain("ERROR");
-    return 0;
-}
+    public:
+    Karen(void);
+    ~Karen(void);
+    void complain( std::string level );
+    
+    private:
+    void debug( void );
+    void info( void );
+    void warning( void );
+    void error( void );
+    void insignificant( void );
+};

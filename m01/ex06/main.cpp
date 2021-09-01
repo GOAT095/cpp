@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 16:38:27 by anassif           #+#    #+#             */
-/*   Updated: 2021/08/08 23:29:22 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/01 20:13:39 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main(int ac, char **av)
 		std::cout << "one argument is needed ! \n";
 		return 0;
 	}
-	std::string s = av[1];
 	k.complain(av[1]);
 	return 0;
 }

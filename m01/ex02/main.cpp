@@ -18,7 +18,7 @@ int main(void)
     std::string *stringPTR = &s;
     std::string &stringREF = s;
 
-    std::cout << "the adress of the string :                "<< &s << std::endl;
+    std::cout << "the adress of the string :"<< &s << std::endl;
     std::cout << "the adress of the string using stringPTR :"<< stringPTR << std::endl;
     std::cout << "the adress of the string using stringREF :"<< &stringREF << std::endl << std::endl;
 

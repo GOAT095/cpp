@@ -6,18 +6,24 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 21:06:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/20 22:19:51 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/20 22:20:32 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
 const int Fixed::j = 8;
+
 Fixed::Fixed()
 {
     this->i = 0;
     std::cout << "Default constructor called\n";
 }
+
+Fixed::Fixed(const int i)
+{
+    this->i = 8;
+}
+
 Fixed::Fixed(Fixed const &test)
 {
     *this = test;

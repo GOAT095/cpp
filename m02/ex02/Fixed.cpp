@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 21:06:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/21 21:19:31 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/21 23:06:35 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,3 +122,24 @@ bool Fixed::operator != (Fixed const &test) const
 {
     return (this->toFloat() != test.toFloat());
 }
+
+static Fixed min(Fixed const &f1, Fixed const &f2)
+{
+    if (f1.toFloat() < f2.toFloat())
+    {
+        return (f1);
+    }
+    else
+        return f2;
+}
+
+static Fixed min(Fixed const &f1, Fixed const &f2)
+{
+    if (f1.toFloat() > f2.toFloat())
+    {
+        return (f1);
+    }
+    else
+        return f2;
+}
+

@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 21:02:14 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/21 21:19:56 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/21 23:01:20 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,19 @@ public:
     Fixed &operator = (Fixed const &test);
 
     Fixed Fixed::operator * (Fixed const &test) const;
-    Fixed Fixed::operator + (Fixed const &test) const;       Fixed Fixed::operator * (Fixed const &test) const;
+    Fixed Fixed::operator + (Fixed const &test) const;
     Fixed Fixed::operator / (Fixed const &test) const;
     Fixed Fixed::operator - (Fixed const &test) const;
     
     bool operator < (Fixed const &test) const;
-        bool operator > (Fixed const &test) const;
-        bool operator >= (Fixed const &test) const;
-        bool operator <= (Fixed const &test) const;
-        bool operator == (Fixed const &test) const;
-        bool operator != (Fixed const &test) const;
+    bool operator > (Fixed const &test) const;
+    bool operator >= (Fixed const &test) const;
+    bool operator <= (Fixed const &test) const;
+    bool operator == (Fixed const &test) const;
+    bool operator != (Fixed const &test) const;
+    
+    static Fixed min(Fixed const &obj, Fixed const &obj2);
+    static Fixed max(Fixed const &obj, Fixed const &obj2);
 
 };
 

@@ -12,19 +12,19 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(): j(8)
+Fixed::Fixed()
 {
     this->i = 0;
     std::cout << "Default constructor called\n";
 }
 
-Fixed::Fixed(const int i): j(8)
+Fixed::Fixed(const int i)
 {
     std::cout << "Int constructor called\n";
     this->i = (i * (1 << j));
 }
 
-Fixed::Fixed(const float i): j(8)
+Fixed::Fixed(const float i)
 {
     std::cout << "Float constructor called\n";
     this->i = roundf(i * (1 << j));
@@ -50,17 +50,28 @@ Fixed &Fixed::operator=(Fixed const &test)
 
 int Fixed::getRawBits( void ) const
 {
-    std::cout << "getRawBits member function called\n";
+    // std::cout << "getRawBits member function called\n";
     return this->i;
 }
 
 void Fixed::setRawBits( int const raw )
 {
-    std::cout << "setRawBits member function called\n";
+    // std::cout << "setRawBits member function called\n";
     this->i = raw;
 }
 
-float toFloat(void) const
+float Fixed::toFloat(void) const
 {
-    return (float)(this->j / (float)(1 << j));
+    return (float)(this->i / (float)(1 << this->j));
+}
+
+int Fixed::toInt(void) const
+{
+    return (this->i / (1 << this->j));
+}
+
+std::ostream &operator<<(std::ostream & o, Fixed const &rhs)
+{
+    o << rhs.getRawBits();
+    return o;
 }

@@ -19,7 +19,7 @@ class Fixed
 {
 private:
     int i;
-    static const int j;
+    static const int j = 8;
 public:
     Fixed();
     Fixed(Fixed const &test);
@@ -32,6 +32,9 @@ public:
 
     float toFloat(void) const;
     int toInt(void) const;
-    
+
     Fixed &operator=(Fixed const &obj);
 };
+
+
+std::ostream &operator<<(std::ostream & o, Fixed const &rhs);

@@ -21,13 +21,13 @@ Fixed::Fixed(): j(8)
 Fixed::Fixed(const int i): j(8)
 {
     std::cout << "Int constructor called\n";
-    this->i = round(i * (1 << j));
+    this->i = (i * (1 << j));
 }
 
 Fixed::Fixed(const float i): j(8)
 {
     std::cout << "Float constructor called\n";
-    this->i = i * (1 << j);
+    this->i = roundf(i * (1 << j));
 }
 
 Fixed::Fixed(Fixed const &test)
@@ -58,4 +58,9 @@ void Fixed::setRawBits( int const raw )
 {
     std::cout << "setRawBits member function called\n";
     this->i = raw;
+}
+
+float toFloat(void) const
+{
+    return (float)(this->j / (float)(1 << j));
 }

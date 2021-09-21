@@ -13,13 +13,13 @@
 #include "Fixed.hpp"
 
 
-
-Fixed::Fixed() : j(8)
+Fixed::Fixed()
 {
     this->i = 0;
     std::cout << "Default constructor called\n";
 }
 Fixed::Fixed(Fixed const &test)
+{
     *this = test;
     std::cout << "Copy constructor called\n";
 }
@@ -44,6 +44,6 @@ int Fixed::getRawBits( void ) const
 
 void Fixed::setRawBits( int const raw )
 {
-    // std::cout << "setRawBits member function called\n";
+    std::cout << "setRawBits member function called\n";
     this->i = raw;
 }

@@ -18,7 +18,7 @@ class Fixed
 {
 private:
     int i;
-    static const int j;
+    static const int j = 8;
 public:
     Fixed();
     Fixed(Fixed const &test);

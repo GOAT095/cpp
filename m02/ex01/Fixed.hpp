@@ -24,8 +24,14 @@ public:
     Fixed();
     Fixed(Fixed const &test);
     Fixed(const int i);
+    Fixed(const float i);
     ~Fixed();
+
     int getRawBits(void) const;
     void setRawBits(int const i);
+
+    float toFloat(void) const;
+    int toInt(void) const;
+    
     Fixed &operator=(Fixed const &obj);
 };

@@ -11,17 +11,23 @@
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-const int Fixed::j = 8;
 
-Fixed::Fixed()
+Fixed::Fixed(): j(8)
 {
     this->i = 0;
     std::cout << "Default constructor called\n";
 }
 
-Fixed::Fixed(const int i)
+Fixed::Fixed(const int i): j(8)
 {
-    this->i = 8;
+    std::cout << "Int constructor called\n";
+    this->i = round(i * (1 << j));
+}
+
+Fixed::Fixed(const float i): j(8)
+{
+    std::cout << "Float constructor called\n";
+    this->i = i * (1 << j);
 }
 
 Fixed::Fixed(Fixed const &test)

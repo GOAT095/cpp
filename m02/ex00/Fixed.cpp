@@ -12,14 +12,14 @@
 
 #include "Fixed.hpp"
 
-const int Fixed::j = 8;
-Fixed::Fixed()
+
+
+Fixed::Fixed() : j(8)
 {
     this->i = 0;
     std::cout << "Default constructor called\n";
 }
 Fixed::Fixed(Fixed const &test)
-{
     *this = test;
     std::cout << "Copy constructor called\n";
 }

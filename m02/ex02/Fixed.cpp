@@ -133,7 +133,7 @@ static Fixed min(Fixed const &f1, Fixed const &f2)
         return f2;
 }
 
-static Fixed min(Fixed const &f1, Fixed const &f2)
+static Fixed max(Fixed const &f1, Fixed const &f2)
 {
     if (f1.toFloat() > f2.toFloat())
     {
@@ -142,4 +142,31 @@ static Fixed min(Fixed const &f1, Fixed const &f2)
     else
         return f2;
 }
+// postfix has an int parameter
+Fixed Fixed::operator++(int)
+{
+    Fixed tmp(*this);
+    ++(tmp);
+    return *this;
+}
 
+// No parameter means this is prefix operator++
+
+Fixed Fixed::operator++(void)
+{
+    this->i++;
+    return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+    Fixed tmp(*this);
+    --(tmp);
+    return *this;
+}
+
+Fixed Fixed::operator--(void)
+{
+    this->i--;
+    return *this;
+}

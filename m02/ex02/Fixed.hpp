@@ -35,10 +35,10 @@ public:
 
     Fixed &operator = (Fixed const &test);
 
-    Fixed Fixed::operator * (Fixed const &test) const;
-    Fixed Fixed::operator + (Fixed const &test) const;
-    Fixed Fixed::operator / (Fixed const &test) const;
-    Fixed Fixed::operator - (Fixed const &test) const;
+    Fixed operator * (Fixed const &test) const;
+    Fixed operator + (Fixed const &test) const;
+    Fixed operator / (Fixed const &test) const;
+    Fixed operator - (Fixed const &test) const;
     
     bool operator < (Fixed const &test) const;
     bool operator > (Fixed const &test) const;
@@ -50,6 +50,10 @@ public:
     static Fixed min(Fixed const &obj, Fixed const &obj2);
     static Fixed max(Fixed const &obj, Fixed const &obj2);
 
+    Fixed operator++(int);
+    Fixed operator++(void);
+    Fixed operator--(int);
+    Fixed operator--(void);
 };
 
 

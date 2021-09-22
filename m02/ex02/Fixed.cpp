@@ -123,7 +123,7 @@ bool Fixed::operator != (Fixed const &test) const
     return (this->toFloat() != test.toFloat());
 }
 
-static Fixed min(Fixed const &f1, Fixed const &f2)
+Fixed Fixed::min(Fixed const &f1, Fixed const &f2)
 {
     if (f1.toFloat() < f2.toFloat())
     {
@@ -133,7 +133,7 @@ static Fixed min(Fixed const &f1, Fixed const &f2)
         return f2;
 }
 
-static Fixed max(Fixed const &f1, Fixed const &f2)
+Fixed Fixed::max(Fixed const &f1, Fixed const &f2)
 {
     if (f1.toFloat() > f2.toFloat())
     {
@@ -145,28 +145,29 @@ static Fixed max(Fixed const &f1, Fixed const &f2)
 // postfix has an int parameter
 Fixed Fixed::operator++(int)
 {
-    Fixed tmp(*this);
-    ++(tmp);
-    return *this;
+    Fixed *tmp = this;
+    ++(this->i);
+    return *tmp;
 }
 
 // No parameter means this is prefix operator++
 
 Fixed Fixed::operator++(void)
 {
-    this->i++;
+    (this->i)++;
     return *this;
 }
 
 Fixed Fixed::operator--(int)
 {
     Fixed tmp(*this);
-    --(tmp);
-    return *this;
+    (this->i)--;
+    return tmp;
 }
 
 Fixed Fixed::operator--(void)
+
 {
-    this->i--;
+    (this->i)--;
     return *this;
 }

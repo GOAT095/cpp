@@ -161,7 +161,7 @@ Fixed Fixed::operator++(void)
 Fixed Fixed::operator--(int)
 {
     Fixed tmp(*this);
-    (this->i)--;
+    --(this->i);
     return tmp;
 }
 

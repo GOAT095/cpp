@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 21:02:14 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/22 14:57:43 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/23 15:15:53 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ private:
 public:
     Fixed();
     Fixed(Fixed const &test);
+    Fixed &operator = (Fixed const &test);
     Fixed(const int i);
     Fixed(const float i);
     ~Fixed();
@@ -33,7 +34,7 @@ public:
     float toFloat(void) const;
     int toInt(void) const;
 
-    Fixed &operator = (Fixed const &test);
+    
 
     Fixed operator * (Fixed const &test) const;
     Fixed operator + (Fixed const &test) const;

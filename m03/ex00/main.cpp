@@ -6,13 +6,13 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 14:59:42 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/23 16:13:48 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/23 16:14:32 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int main()
+int main(void)
 {
     ClapTrap clapdef;
     ClapTrap clap("clap1");

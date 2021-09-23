@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 14:59:37 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/23 19:17:09 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/23 19:46:13 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ ClapTrap::ClapTrap()
     this->_Hitpoints = 10;
     this->_Energy_points = 10;
     this->_Attack_damage = 10;
-    std::cout << "Default constructor called\n";
+    std::cout << "Default ClapTrap constructor called\n";
 }
 ClapTrap::ClapTrap(std::string name): _Name(name)
 {
-    std::cout << "name constructor called\n";
+    std::cout << "ClapTrap name constructor called\n";
     this->_Hitpoints = 10;
     this->_Energy_points = 10;
     this->_Attack_damage = 10;
@@ -31,12 +31,12 @@ ClapTrap::ClapTrap(std::string name): _Name(name)
 ClapTrap::ClapTrap(ClapTrap const &obj)
 {
     *this = obj;
-    std::cout << "Copy constructor called\n";
+    std::cout << "ClapTrap Copy constructor called\n";
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &obj)
 {
-    std::cout << "Assignation operator called\n";
+    std::cout << "ClapTrap Assignation operator called\n";
     this->_Name = obj._Name;
     return *this;
 }

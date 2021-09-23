@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 14:59:37 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/23 15:42:08 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/23 15:59:10 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ClapTrap::ClapTrap(ClapTrap const &obj)
     std::cout << "Copy constructor called\n";
 }
 
-Fixed &Fixed::operator=(Fixed const &obj)
+ClapTrap &ClapTrap::operator=(ClapTrap const &obj)
 {
     std::cout << "Assignation operator called\n";
     this->_Name = obj.GetName();
@@ -37,10 +37,10 @@ Fixed &Fixed::operator=(Fixed const &obj)
 
 ClapTrap::~ClapTrap()
 {
-    std:cout << "Claptrap" << this._Name << "BOOOM\n";   
+    std::cout << "Claptrap" << this->_Name << "BOOOM\n";   
 }
 
-std::string ClapTap::GetName(void) const
+void ClapTrap::GetName(void) const
 {
     return this->_Name;
 }
@@ -54,9 +54,9 @@ void attack(std::string const & target)
 
 void takeDamage(unsigned int amount)
 {
-    std::cout << "ClapTrap" << this->.GetName() << "has taken" << amount << "of damage !\n";
+    std::cout << "ClapTrap" << this->GetName() << "has taken" << amount << "of damage !\n";
 }
 • void beRepaired(unsigned int amount)
 {
-    std::cout << "ClapTrap" << this->.GetName() << "was repaired for" << amount << "of Energy points!\n";
+    std::cout << "ClapTrap" << this->GetName() << "was repaired for" << amount << "of Energy points!\n";
 }

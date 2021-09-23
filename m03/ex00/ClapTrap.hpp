@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 14:59:33 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/23 15:58:14 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/23 16:10:02 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ class ClapTrap
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
         
-        void GetName(void) const;
+        // std::string GetName(void) const;
 };

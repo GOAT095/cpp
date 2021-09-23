@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 14:59:37 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/23 16:28:25 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/23 16:31:38 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &obj)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Claptrap" << this->_Name << "BOOOM\n";   
+    std::cout << "Claptrap " << this->_Name << " BOOOM\n";   
 }
 
 // std::string ClapTrap::GetName(void) const
@@ -52,16 +52,16 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(std::string const & target)
 {
-    std::cout << "ClapTrap" << this->_Name << "attack  " << target << ", causing" << this->_Attack_damage << " points of damage !\n";
+    std::cout << "ClapTrap " << this->_Name << " attack  " << target << ", causing" << this->_Attack_damage << " points of damage !\n";
     // target._Hitpoints--;
     // this->_Energy_points--;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    std::cout << "ClapTrap" << this->_Name << "has taken " << amount << " of damage !\n";
+    std::cout << "ClapTrap " << this->_Name << " has taken " << amount << " of damage !\n";
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    std::cout << "ClapTrap" << this->_Name << "was repaired for " << amount << " of Energy points!\n";
+    std::cout << "ClapTrap " << this->_Name << " was repaired for " << amount << " of Energy points!\n";
 }

@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 14:59:37 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/23 15:35:51 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/23 15:38:35 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ std::string ClapTap::GetName(void) const
 
 void attack(std::string const & target)
 {
-    std::cout << ""
+    std::cout << "ClapTrap" << this.GetName() << "attack" << target.GetName() << ", causing" << this._Attack_damage << "points of damage !\n";
 }

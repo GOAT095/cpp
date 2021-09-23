@@ -1,6 +1,6 @@
-NAME = Fixed
+NAME = ClapTrap
 
-SRCS = main.cpp ClapTrap.cpp main.cpp
+SRCS = main.cpp ClapTrap.cpp
 
 FLAGS = -Wall -Wextra -Werror
 

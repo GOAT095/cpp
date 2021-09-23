@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 14:59:37 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/23 15:38:35 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/23 15:42:08 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,14 @@ std::string ClapTap::GetName(void) const
 
 void attack(std::string const & target)
 {
-    std::cout << "ClapTrap" << this.GetName() << "attack" << target.GetName() << ", causing" << this._Attack_damage << "points of damage !\n";
+    std::cout << "ClapTrap" << this.GetName() << "attack" << target.GetName() << ", causing" << this->_Attack_damage << "points of damage !\n";
+}
+
+void takeDamage(unsigned int amount)
+{
+    std::cout << "ClapTrap" << this->.GetName() << "has taken" << amount << "of damage !\n";
+}
+• void beRepaired(unsigned int amount)
+{
+    std::cout << "ClapTrap" << this->.GetName() << "was repaired for" << amount << "of Energy points!\n";
 }

@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 13:11:33 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/24 17:13:31 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/24 17:52:12 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,12 @@ DiamondTrap::~DiamondTrap()
     std::cout << "DiamondTrap " << this->_Name << " BOOOM\n";   
 }
 
+void    DiamondTrap::attack(std::string const & target)
+{
+    ScavTrap::attack(target);
+}
 
-
+void DiamondTrap::whoAmI()
+{
+    std::cout << "Diamond name = " << this->_Name << " Clap name = " << ClapTrap::_Name << std::endl;
+}

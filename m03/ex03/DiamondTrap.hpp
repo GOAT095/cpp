@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 13:11:46 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/24 17:14:06 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/24 17:45:39 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ class DiamondTrap : public FragTrap, public ScavTrap
         DiamondTrap &operator = (DiamondTrap const &test);
         ~DiamondTrap();
         void attack(std::string const & target);
+        void whoAmI();
 };

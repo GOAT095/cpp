@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:55:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/27 16:04:17 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/27 16:30:10 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ class Dog : public Animal
     public:
         Dog();
         Dog(std::string type);
-        Dog(const Animal& Dog);
-        Dog& operator = (const Dog& Dog);
+        Dog(const Dog& obj);
+        Dog& operator = (const Dog& obj);
         ~Dog();
         
         void    makeSound() const;
-        std::string            std::string   getType() cons() const;  
+        std::string    getType() const;
 };
 
 class Cat : public Animal
@@ -52,10 +52,10 @@ class Cat : public Animal
     public:
         Cat();
         Cat(std::string type);
-        Cat(const Animal& DCatog);
-        Cat& operator = (const Cat& Cat);
+        Cat(const Cat& obj);
+        Cat& operator = (const Cat& obj);
         ~Cat();
         
         void    makeSound() const;
-        std::string   Get_type() const;
+        std::string   getType() const;
 };

@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:11:16 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/27 16:04:58 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/27 16:29:01 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,14 @@ Dog::Dog(std::string type): Animal(type)
 {
     std::cout << "Dog type constractor was called\n";
 }
-Dog::Dog(const Dog& Dog)
+Dog::Dog(const Dog& obj)
 {
-    *this = Dog;
+    *this = obj;
     std::cout << "Dog copy constractor was called\n";
 }
-Dog &Dog::operator = (const Dog& Dog)
+Dog &Dog::operator = (const Dog& obj)
 {
-    this->type = Dog.type;
+    this->type = obj.type;
     return *this;
     std::cout << "Dog assignement constractor was called\n";
 }
@@ -93,14 +93,14 @@ Cat::Cat(std::string type): Animal(type)
     this->type = type;
     std::cout << "Cat type constractor was called\n";
 }
-Cat::Cat(const Cat& Cat)
+Cat::Cat(const Cat& obj)
 {
-    *this = Cat;
+    *this = obj;
     std::cout << "Cat copy constractor was called\n";
 }
-Cat &Cat::operator = (const Cat& Cat)
+Cat &Cat::operator = (const Cat& obj)
 {
-    this->type = Cat.type;
+    this->type = obj.type;
     return *this;
     std::cout << "Cat assignement constractor was called\n";
 }

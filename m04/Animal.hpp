@@ -6,14 +6,14 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:55:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/27 15:56:07 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/27 16:04:17 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "iostream"
 
-Class Animal{
+class Animal{
 
     protected:
         std::string type;
@@ -25,10 +25,10 @@ Class Animal{
         ~Animal();
         
         void   makeSound() const;
-        std::string   Get_type() const;  
+        std::string   getType() const;  
 };
 
-Class Dog : public Animal
+class Dog : public Animal
 {
 
     private:
@@ -41,10 +41,10 @@ Class Dog : public Animal
         ~Dog();
         
         void    makeSound() const;
-        std::string    Get_type() const;  
+        std::string            std::string   getType() cons() const;  
 };
 
-Class Cat : public Animal
+class Cat : public Animal
 {
 
     private:
@@ -57,5 +57,5 @@ Class Cat : public Animal
         ~Cat();
         
         void    makeSound() const;
-        voistd::string   Get_type() const;
+        std::string   Get_type() const;
 };

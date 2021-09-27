@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:55:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/27 16:30:10 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/27 16:45:09 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal{
         Animal& operator = (const Animal& Animal);
         ~Animal();
         
-        void   makeSound() const;
+        virtual void   makeSound() const;
         std::string   getType() const;  
 };
 

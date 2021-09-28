@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:55:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/28 15:28:33 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/28 15:50:24 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Animal{
         Animal(std::string type);
         Animal(const Animal& obj);
         Animal& operator = (const Animal& obj);
-        ~Animal();
+        virtual ~Animal();
         
         virtual void   makeSound() const;
         std::string   getType() const;  
@@ -71,7 +71,37 @@ class WrongAnimal{
         WrongAnimal& operator = (const WrongAnimal& obj);
         ~WrongAnimal();
         
-        virtual void   makeSound() const;
+        void   makeSound() const;
         std::string   getType() const;
 };
 
+
+class WrongDog : public WrongAnimal
+{
+
+    private:
+        std::string type;
+    public:
+        WrongDog();
+        WrongDog(std::string type);
+        WrongDog(const WrongDog& obj);
+        WrongDog& operator = (const WrongDog& obj);
+        ~WrongDog();
+        
+        void    makeSound() const;
+};
+
+class WrongCat : public WrongAnimal
+{
+
+    private:
+        std::string type;
+    public:
+        WrongCat();
+        WrongCat(std::string type);
+        WrongCat(const WrongCat& obj);
+        WrongCat& operator = (const WrongCat& obj);
+        ~WrongCat();
+        
+        void    makeSound() const;
+};

@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:11:16 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/28 15:28:51 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/28 15:46:55 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,3 +109,99 @@ void Cat::makeSound() const
     std::cout << "Miaaaoooo\n";
 }
 
+// wrong animal part // wrong animal part
+
+WrongAnimal::WrongAnimal()
+{
+    std::cout << "WrongAnimal default constractor was called\n";
+}
+WrongAnimal::WrongAnimal(std::string type)
+{
+    this->type = type;
+    std::cout << "WrongAnimal type constractor was called\n";
+}
+WrongAnimal::WrongAnimal(const WrongAnimal& obj)
+{
+    *this = obj;
+    std::cout << "WrongAnimal copy constractor was called\n";
+}
+WrongAnimal &WrongAnimal::operator = (const WrongAnimal& obj)
+{
+    this->type = obj.type;
+    return *this;
+    std::cout << "WrongAnimal assignement constractor was called\n";
+}
+WrongAnimal::~WrongAnimal()
+{
+    std::cout << "Wronganimal was slaughtered\n";
+}
+void WrongAnimal::makeSound() const
+{
+    std::cout << "wich Wronganimal stoopid\n";
+}
+std::string WrongAnimal::getType() const
+{
+    return this->type;
+}
+
+//Dog stuff
+
+WrongDog::WrongDog(): WrongAnimal("Dog")
+{
+    std::cout << "WrongDog default constractor was called\n";
+}
+
+WrongDog::WrongDog(std::string type): WrongAnimal(type)
+{
+    std::cout << "WrongDog type constractor was called\n";
+}
+WrongDog::WrongDog(const WrongDog& obj)
+{
+    *this = obj;
+    std::cout << "WrongDog copy constractor was called\n";
+}
+WrongDog &WrongDog::operator = (const WrongDog& obj)
+{
+    this->type = obj.type;
+    return *this;
+    std::cout << "WrongDog assignement constractor was called\n";
+}
+WrongDog::~WrongDog()
+{
+    std::cout << "WrongDog was slaughtered\n";
+}
+void WrongDog::makeSound() const
+{
+    std::cout << "Woooof\n";
+}
+
+//Cat stuff
+
+WrongCat::WrongCat(): WrongAnimal("WrongCat")
+{
+    std::cout << "WrongCat default constractor was called\n";
+}
+WrongCat::WrongCat(std::string type): WrongAnimal(type)
+{
+    this->type = type;
+    std::cout << "WrongCat type constractor was called\n";
+}
+WrongCat::WrongCat(const WrongCat& obj)
+{
+    *this = obj;
+    std::cout << "WrongCat copy constractor was called\n";
+}
+WrongCat &WrongCat::operator = (const WrongCat& obj)
+{
+    this->type = obj.type;
+    return *this;
+    std::cout << "WrongCat assignement constractor was called\n";
+}
+WrongCat::~WrongCat()
+{
+    std::cout << "WrongCat was slaughtered\n";
+}
+void WrongCat::makeSound() const
+{
+    std::cout << "Miaaaoooo\n";
+}

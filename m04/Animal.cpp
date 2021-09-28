@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:11:16 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/27 16:44:30 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/28 15:14:15 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,6 @@ void Dog::makeSound() const
 {
     std::cout << "Woooof\n";
 }
-std::string Dog::getType() const
-{
-    return this->type;
-}
 
 //Cat stuff
 
@@ -111,9 +107,5 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
     std::cout << "Miaaaoooo\n";
-}
-std::string Cat::getType() const
-{
-    return this->type;
 }
 

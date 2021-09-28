@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:55:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/27 16:45:09 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/28 15:12:57 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ class Dog : public Animal
         ~Dog();
         
         void    makeSound() const;
-        std::string    getType() const;
 };
 
 class Cat : public Animal
@@ -57,5 +56,4 @@ class Cat : public Animal
         ~Cat();
         
         void    makeSound() const;
-        std::string   getType() const;
 };

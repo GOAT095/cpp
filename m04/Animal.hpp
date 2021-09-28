@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:55:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/28 15:12:57 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/28 15:28:33 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Animal{
     public:
         Animal();
         Animal(std::string type);
-        Animal(const Animal& Animal);
-        Animal& operator = (const Animal& Animal);
+        Animal(const Animal& obj);
+        Animal& operator = (const Animal& obj);
         ~Animal();
         
         virtual void   makeSound() const;
@@ -57,3 +57,21 @@ class Cat : public Animal
         
         void    makeSound() const;
 };
+
+// wrong animal part
+
+class WrongAnimal{
+
+    protected:
+        std::string type;
+    public:
+        WrongAnimal();
+        WrongAnimal(std::string type);
+        WrongAnimal(const WrongAnimal& obj);
+        WrongAnimal& operator = (const WrongAnimal& obj);
+        ~WrongAnimal();
+        
+        virtual void   makeSound() const;
+        std::string   getType() const;
+};
+

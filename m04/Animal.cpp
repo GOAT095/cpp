@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:11:16 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/28 15:14:15 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/28 15:28:51 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ Animal::Animal(std::string type)
     this->type = type;
     std::cout << "Animal type constractor was called\n";
 }
-Animal::Animal(const Animal& Animal)
+Animal::Animal(const Animal& obj)
 {
-    *this = Animal;
+    *this = obj;
     std::cout << "Animal copy constractor was called\n";
 }
-Animal &Animal::operator = (const Animal& Animal)
+Animal &Animal::operator = (const Animal& obj)
 {
-    this->type = Animal.type;
+    this->type = obj.type;
     return *this;
     std::cout << "Animal assignement constractor was called\n";
 }

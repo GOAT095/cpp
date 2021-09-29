@@ -6,40 +6,46 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 16:00:52 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/28 15:45:03 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/29 18:09:56 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-    delete i;
-    delete j;
-    delete meta;
-    std::cout << "----------- wrong test --------\n";
+    int i = 2;
+    const Animal *animal[i];
 
-    const WrongAnimal* meta2 = new WrongAnimal();
-    const WrongAnimal* w = new WrongCat();
-    std::cout << w->getType() << " " << std::endl;
-    w->makeSound();
-    meta2->makeSound();
-    delete w;
-    delete meta2;
+    for(int j = 0 ; j < i/2 ; j++)
+        animal[j] = new Dog();
+    for(int j = i/2 ; j < i ; j++)
+        animal[j] = new Cat();
+    
+    for(int j = 0 ; j < i ; j++ )
+        delete animal[j];
 
-    // Cat cat;
-    // Dog dog;
+    std::cout << "*******************\n";
 
-    // std::cout << cat.getType() << "\n";
-    // std::cout << dog.getType() << "\n";
+    Dog dog;
+    dog.setIdea(0, "Dog idea 0 from dog");
+    dog.setIdea(5, "Dog idea 5 from dog");
+    std::cout << dog.getIdea(5) << "--\n";
 
+    Dog dog2(dog);
+    std::cout << dog2.getIdea(5) << "----\n";
+    std::cout << dog.getIdea(5) << "--\n";
+
+    std::cout << "*******************\n";
+
+    Cat cat;
+    cat.setIdea(0, "cat idea 0 from cat");
+    cat.setIdea(5, "cat idea 5 from cat");
+    std::cout << cat.getIdea(5) << "--\n";
+
+    Cat cat2(cat);
+    std::cout << cat2.getIdea(5) << "----\n";
+    std::cout << cat.getIdea(5) << "--\n";
     return 0;
 }

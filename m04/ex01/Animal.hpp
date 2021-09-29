@@ -6,12 +6,13 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:55:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/29 18:18:08 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/29 20:53:37 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "iostream"
+#include "Brain.hpp"
 
 class Animal{
 
@@ -33,6 +34,7 @@ class Dog : public Animal
 
     private:
         std::string type;
+        Brain       *brain;
     public:
         Dog();
         Dog(std::string type);
@@ -40,8 +42,9 @@ class Dog : public Animal
         Dog& operator = (const Dog& obj);
         ~Dog();
         
-        void    makeSound() const;
-        std::string getIdea(int i);
+        void            makeSound() const;
+        std::string     getIdea(int position) const;
+        void            setIdea(int i, std::string idea);
 };
 
 class Cat : public Animal
@@ -49,6 +52,7 @@ class Cat : public Animal
 
     private:
         std::string type;
+        Brain       *brain;
     public:
         Cat();
         Cat(std::string type);
@@ -56,54 +60,7 @@ class Cat : public Animal
         Cat& operator = (const Cat& obj);
         ~Cat();
         
-        void    makeSound() const;
-        std::string getIdea(int i);
-};
-
-// wrong animal part
-
-class WrongAnimal{
-
-    protected:
-        std::string type;
-    public:
-        WrongAnimal();
-        WrongAnimal(std::string type);
-        WrongAnimal(const WrongAnimal& obj);
-        WrongAnimal& operator = (const WrongAnimal& obj);
-        ~WrongAnimal();
-        
-        void   makeSound() const;
-        std::string   getType() const;
-};
-
-
-class WrongDog : public WrongAnimal
-{
-
-    private:
-        std::string type;
-    public:
-        WrongDog();
-        WrongDog(std::string type);
-        WrongDog(const WrongDog& obj);
-        WrongDog& operator = (const WrongDog& obj);
-        ~WrongDog();
-        
-        void    makeSound() const;
-};
-
-class WrongCat : public WrongAnimal
-{
-
-    private:
-        std::string type;
-    public:
-        WrongCat();
-        WrongCat(std::string type);
-        WrongCat(const WrongCat& obj);
-        WrongCat& operator = (const WrongCat& obj);
-        ~WrongCat();
-        
-        void    makeSound() const;
+        void            makeSound() const;
+        std::string     getIdea(int position) const;
+        void            setIdea(int i, std::string idea);
 };

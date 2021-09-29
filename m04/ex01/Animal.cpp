@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:11:16 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/29 17:26:24 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/29 18:17:11 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,11 @@ void Dog::makeSound() const
 {
     std::cout << "Woooof\n";
 }
+std::string Dog::getIdea(int i)
+{
+    return this->ideas[i];
+}
+
 
 //Cat stuff
 
@@ -107,6 +112,10 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
     std::cout << "Miaaaoooo\n";
+}
+std::string Cat::getIdea(int i)
+{
+    return this->ideas[i];
 }
 
 // wrong animal part // wrong animal part

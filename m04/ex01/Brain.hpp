@@ -6,13 +6,12 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 17:27:03 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/29 17:27:05 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/29 17:27:59 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef BRAIN_H
-#define BRAIN_H
+#pragma once
 
 #include "iomanip"
 #include "iostream"
@@ -30,5 +29,3 @@ class   Brain
     protected:
         std::string ideas[100];
 };
-
-#endif

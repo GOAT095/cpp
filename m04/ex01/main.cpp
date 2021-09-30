@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 16:00:52 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/30 02:06:35 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/30 17:09:29 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,18 @@ int main()
     std::cout << "*******************\n";
 
     Cat cat;
-    // cat.setIdea(0, "cat idea 0 from cat");
-    // cat.setIdea(5, "cat idea 5 from cat");
+    cat.setIdea(0, "cat idea 0 from cat");
+    cat.setIdea(5, "cat idea 5 from cat");
     std::cout << cat.getIdea(5) << "--\n";
 
     Cat cat2(cat);
     std::cout << cat2.getIdea(5) << "----\n";
     std::cout << cat.getIdea(5) << "--\n";
 
-    const Animal *dog =  new Dog();
-    const Animal *cat =  new Cat();
+    const Animal *dog5 =  new Dog();
+    const Animal *cat5 =  new Cat();
 
-    cat.makeSound();
-    dog.makeSound();
+    cat5->makeSound();
+    dog5->makeSound();
     return 0;
 }

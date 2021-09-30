@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:11:16 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/29 21:32:38 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/30 17:15:46 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,13 @@ Dog::Dog(const Dog& obj)
 Dog &Dog::operator = (const Dog& obj)
 {
     std::cout << "Dog assignement constractor was called\n";
+    if (this->brain != NULL)
+        delete brain;
     this->brain = new Brain();
-        for (int i = 0; i < 100; i++)
-        {
-            this->brain->setIdea(i, obj.brain->getIdea(i));
-        }
+    for (int i = 0; i < 100; i++)
+    {
+        this->brain->setIdea(i, obj.brain->getIdea(i));
+    }
     return *this;
 }
 
@@ -96,6 +98,7 @@ void            Dog::setIdea(int i, std::string idea) {
 std::string     Dog::getIdea(int position) const {
     return (this->brain->getIdea(position));
 }
+
 //Cat stuff
 
 Cat::Cat(): Animal("Cat")
@@ -118,8 +121,13 @@ Cat::Cat(const Cat& obj)
 Cat &Cat::operator = (const Cat& obj)
 {
     std::cout << "Cat assignement constractor was called\n";
-    this->type = obj.type;
-    *(this->brain) = *(obj.brain);
+    if (this->brain != NULL)
+        delete brain;
+    this->brain = new Brain();
+    for (int i = 0; i < 100; i++)
+    {
+        this->brain->setIdea(i, obj.brain->getIdea(i));
+    }
     return *this;
 }
 Cat::~Cat()

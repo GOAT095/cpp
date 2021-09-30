@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 16:00:52 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/30 17:09:29 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/30 18:35:37 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ int main()
     std::cout << cat.getIdea(5) << "--\n";
 
     Cat cat2(cat);
-    std::cout << cat2.getIdea(5) << "----\n";
+    // std::cout << cat2.getIdea(5) << " (cat 2)----\n";
+    cat.setIdea(5, "cat idea 5555 from cat");
+    std::cout << cat2.getIdea(5) << " (cat 2)----\n";
     std::cout << cat.getIdea(5) << "--\n";
 
     const Animal *dog5 =  new Dog();

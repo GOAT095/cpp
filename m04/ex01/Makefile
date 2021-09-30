@@ -1,6 +1,6 @@
 NAME = Poly
 
-SRCS = main.cpp Animal.cpp
+SRCS = main.cpp Animal.cpp Brain.cpp
 
 FLAGS = -Wall -Wextra -Werror
 

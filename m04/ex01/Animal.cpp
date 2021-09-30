@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:11:16 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/29 20:53:52 by anassif          ###   ########.fr       */
+/*   Updated: 2021/09/29 21:32:38 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,11 @@ Dog::Dog(const Dog& obj)
 Dog &Dog::operator = (const Dog& obj)
 {
     std::cout << "Dog assignement constractor was called\n";
-    this->type = obj.type;
-    *(this->brain) = *(obj.brain);
+    this->brain = new Brain();
+        for (int i = 0; i < 100; i++)
+        {
+            this->brain->setIdea(i, obj.brain->getIdea(i));
+        }
     return *this;
 }
 

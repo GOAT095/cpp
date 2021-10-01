@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 16:00:52 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/01 12:32:16 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/01 12:51:42 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main()
 {
     int i = 2;
     // Animal a("dog");
+    // Animal *a = new Animal();
     const Animal *animal[i];
     for(int j = 0 ; j < i/2 ; j++)
         animal[j] = new Dog();
@@ -45,8 +46,9 @@ int main()
     std::cout << cat.getIdea(5) << "--\n";
 
     Cat cat2(cat);
+    cat.setIdea(5, "cat idea 5 from original cat");
     std::cout << cat2.getIdea(5) << "----\n";
-    std::cout << cat.getIdea(5) << "--\n";
+    std::cout << cat.getIdea(5) << "orihginal cat s idea--\n";
     
     const Animal *dog5 =  new Dog();
     const Animal *cat5 =  new Cat();

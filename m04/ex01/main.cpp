@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 16:00:52 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/01 12:57:02 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/01 14:22:19 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 int main()
 {
+    
+    // Animal *a = new Cat();
+    // delete a;
+    
     int i = 2;
     const Animal *animal[i];
 

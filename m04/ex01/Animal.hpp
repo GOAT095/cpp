@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:55:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/29 21:32:50 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/01 14:20:50 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Animal{
         virtual ~Animal();
         
         virtual void   makeSound() const;
-        std::string   getType() const;  
+        std::string   getType() const;
 };
 
 class Dog : public Animal

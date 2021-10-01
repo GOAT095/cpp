@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:11:16 by anassif           #+#    #+#             */
-/*   Updated: 2021/09/30 17:15:46 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/01 12:54:01 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ void Dog::makeSound() const
 void            Dog::setIdea(int i, std::string idea) {
     this->brain->setIdea(i, idea);
 }
-
 
 std::string     Dog::getIdea(int position) const {
     return (this->brain->getIdea(position));

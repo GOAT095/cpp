@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 16:00:52 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/01 12:31:40 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/01 12:57:02 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main()
 {
     int i = 2;
-    // const Animal *animal[i];
+    const Animal *animal[i];
 
     for(int j = 0 ; j < i/2 ; j++)
         animal[j] = new Dog();

@@ -37,3 +37,5 @@ class Bureaucrat{
         void gradeDec();
         
 };
+
+std::ostream &operator<<(std::ostream & o, Bureaucrat const &rhs);

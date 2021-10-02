@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:33 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/02 17:06:21 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/02 17:31:08 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,26 @@ void Bureaucrat::setGrade(int newgrade)
     this->grade = newgrade;
 }
 
-//funciotns
+//functions
 
-// Bureaucrat::void gradeInc()
-// {
-//     if (this->grade == 1)
-// }
+void Bureaucrat::gradeInc()
+{
+    if (this->grade == 1)
+        throw Bureaucrat::GradeTooHighException();
+    else
+        this->grade--;
+}
+
+void Bureaucrat::gradeDec()
+{
+    if (this->grade == 150)
+        throw Bureaucrat::GradeTooLowException();
+    else
+        this->grade++;
+}
+
+std::ostream &operator<<(std::ostream & o, Bureaucrat const &obj)
+{
+    o << obj.getName() << ", Bureaucrat Grade : " << obj.getGrade() << ".\n";;
+    return o;
+}

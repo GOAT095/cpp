@@ -6,56 +6,65 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:33 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/02 16:12:12 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/02 17:06:21 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 
 
-bureaucrat::bureaucrat()
+Bureaucrat::Bureaucrat()
 {
     std::cout << "bureaucrat default constractor was called\n";
 }
-bureaucrat::bureaucrat(std::string type)
+Bureaucrat::Bureaucrat(std::string newname, int newdgrade) : name(newname), grade(newdgrade)
 {
-    this->type = type;
-    std::cout << "bureaucrat type constractor was called\n";
+    if (grade < 1)
+        throw Bureaucrat::GradeTooHighException();
+    if (grade > 150)
+        throw Bureaucrat::GradeTooLowException();
+    std::cout << "Bureaucrat type constractor was called\n";
 }
-bureaucrat::bureaucrat(const bureaucrat& obj)
+Bureaucrat::Bureaucrat(const Bureaucrat& obj)
 {
     *this = obj;
-    std::cout << "bureaucrat copy constractor was called\n";
+    std::cout << "Bureaucrat copy constractor was called\n";
 }
-bureaucrat &bureaucrat::operator = (const bureaucrat& obj)
+Bureaucrat &Bureaucrat::operator = (const Bureaucrat& obj)
 {
-    this->type = obj.type;
+    std::cout << "Bureaucrat assignement constractor was called\n";
+    this->name = obj.name;
+    this->grade = obj.grade;
     return *this;
-    std::cout << "bureaucrat assignement constractor was called\n";
+    
 }
-bureaucrat::~bureaucrat()
+Bureaucrat::~Bureaucrat()
 {
-    std::cout << "bureaucrat was slaughtered\n";
+    std::cout << "Bureaucrat was slaughtered\n";
 }
 
 //getters && setters
 
-std::string getName(void) const
+std::string Bureaucrat::getName(void) const
 {
     return (this->name);
 }
-void setName(int newname)
+void Bureaucrat::setName(std::string newname)
 {
     this->name = newname;
 }
-int getGrade(void) const
+int Bureaucrat::getGrade(void) const
 {
     return (this->grade);
 }
-void setGrade(int newgrade)
+void Bureaucrat::setGrade(int newgrade)
 {
     this->grade = newgrade;
 }
 
 //funciotns
 
+// Bureaucrat::void gradeInc()
+// {
+//     if (this->grade == 1)
+// }

@@ -1,7 +1,7 @@
 #pragma once
 
-#include <stdexcept>
 #include <iostream>
+#include <stdexcept>
 
 class Form{
     private:
@@ -45,3 +45,5 @@ class Form{
             }
         };
 }
+
+std::ostream &operator<<(std::ostream & o, Form const &rhs);

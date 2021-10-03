@@ -50,4 +50,4 @@ class Form{
         void signForm(Bureaucrat b);
 }
 
-std::ostream &operator<<(std::ostream & o, Form const &rhs);
+// std::ostream &operator<<(std::ostream & o, Form const &obj);

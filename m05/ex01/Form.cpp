@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 16:49:56 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/03 17:20:25 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/03 17:24:59 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,50 @@ Form &Form::operator = (const Form& obj)
 {
     std::cout << "Form assignement constractor was called\n";
     this->name = obj.name;
-    this->grade = obj.grade;
+    this->gradesigne = obj.gradesigne;
+    this->gradeexec = obj.gradeexec;
     return *this;
     
 }
 Form::~Form()
 {
     std::cout << "Form was slaughtered\n";
+}
+
+//getters // setters
+
+std::string Form::getName() const
+{
+    return (this->name);
+}
+void Form::setName(std::string newname)
+{
+    this->name = newname;
+}
+
+int Form::getSignGrade(void) const
+{
+    return (this->gradesigne);
+}
+void Form::setSignGrade(int newgrade)
+{
+    this->gradesigne = newgrade;
+}
+
+int Form::getExecGrade(void) const
+{
+    return (this->gradeexec);
+}
+void Form::setExecGrade(int newgrade)
+{
+    this->gradeexec = newgrade;
+}
+
+bool Form::getIsSigned(void) const
+{
+    return (this->is_signed);
+}
+void Form::setIsSigned(bool issigned)
+{
+    this->is_signed = issigned;
 }

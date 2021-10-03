@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Bureaucrat.hpp"
+#include <stdexcept>
 #include <iostream>
 
 class Form{
@@ -17,7 +17,19 @@ class Form{
         ~Form();
         
         
-        
+        std::string getName() const;
+        void setName(std::string newname);
+
+        int getSignGrade(void) const;
+        void setSignGrade(int newgrade);
+
+        int getExecGrade(void) const;
+        void setExecGrade(int newgrade);
+
+        bool getIsSigned(void) const;
+        void setIsSigned(bool newgrade);
+
+
         class GradeTooHighException :public std::exception
         {
             const char * what () const throw () //so it doesnt throw

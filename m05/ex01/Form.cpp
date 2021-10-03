@@ -6,11 +6,12 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 16:49:56 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/03 17:49:28 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/03 18:18:47 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form()
 {
@@ -88,14 +89,15 @@ void Form::setIsSigned(bool issigned)
 
 std::ostream &operator<<(std::ostream & o, Form const &obj)
 {
-    o << obj.getName() << ", Bureaucrat Grade : " << obj.getGrade() << ".\n";;
+    o << obj.getName() << ", signed ? : " << obj.getIsSigned() << "sign grade: " << obj.getSignGrade() <<".\n";;
     return o;
 }
 
 //new functions
 
-void beSigned(Bureaucrat b)
+void Form::beSigned(Bureaucrat b)
 {
     if (b.getGrade() < this->gradesigne)
-        throw Bureaucrat::GradeTooLowException();
+        throw Form::GradeTooLowException();
+    this->is_signed = true;
 }

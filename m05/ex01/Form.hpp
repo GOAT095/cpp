@@ -2,7 +2,8 @@
 
 #include <iostream>
 #include <stdexcept>
-#include "Bureaucrat.hpp"
+// #include "Bureaucrat.hpp"
+class Bureaucrat;
 
 class Form{
     private:
@@ -47,7 +48,6 @@ class Form{
         };
         
         void beSigned(Bureaucrat b);
-        void signForm(Bureaucrat b);
-}
+};
 
-// std::ostream &operator<<(std::ostream & o, Form const &obj);
+std::ostream &operator<<(std::ostream & o, Form const &obj);

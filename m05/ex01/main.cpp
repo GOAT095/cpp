@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:45 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/03 17:11:33 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/03 18:15:27 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-    std::cout << "********** test Form grade range ********\n" << Reset ;
+    std::cout << "********** test Form grade range ********\n";
     try{
         Form f1("F1", 1, 150);
         std::cout << f1;
@@ -24,7 +24,7 @@ int main()
         std::cout << e.what();
     }
 
-    std::cout << Green << "********** test Form and bureaucrat asignation ********\n" << Reset ;
+    std::cout << "********** test Form and bureaucrat asignation ********\n";
     try{
         Bureaucrat b1("B1", 5);
         std::cout << b1;
@@ -37,7 +37,7 @@ int main()
         std::cout << e.what();
     }
 
-    std::cout << Green << "********** test Form and bureaucrat wrong asignation ********\n" << Reset ;
+    std::cout << "********** test Form and bureaucrat wrong asignation ********\n";
     try{
         Bureaucrat b1("B1", 5);
         std::cout << b1;
@@ -50,7 +50,7 @@ int main()
         std::cout << e.what();
     }
 
-    std::cout << Green << "********** test Form and bureaucrat wrong asignation 2 ********\n" << Reset ;
+    std::cout << "********** test Form and bureaucrat wrong asignation 2 ********\n";
     try{
         Bureaucrat b1("B1", 5);
         std::cout << b1;

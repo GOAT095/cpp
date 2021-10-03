@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include "Bureaucrat.hpp"
 
 class Form{
     private:
@@ -44,6 +45,9 @@ class Form{
                 return "grade is too low !\n";
             }
         };
+        
+        void beSigned(Bureaucrat b);
+        void signForm(Bureaucrat b);
 }
 
 std::ostream &operator<<(std::ostream & o, Form const &rhs);

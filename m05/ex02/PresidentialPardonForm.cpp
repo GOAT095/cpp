@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 13:17:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 17:30:23 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/04 18:26:14 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
             throw Form::GradeTooLowException();
         throw Form::notSignedException();
     }
+    std::cout << this->_Target << " has been pardoned by Zafod Beeblebrox\n";
 }

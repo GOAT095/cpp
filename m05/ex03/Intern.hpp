@@ -11,7 +11,7 @@ class Intern{
 
     public:
         Intern();
-        Intern(std::string newname, int gradesigne, int gradeexec);
+        Intern();
         Intern(const Intern& obj);
         Intern& operator = (const Intern& obj);
         ~Intern();

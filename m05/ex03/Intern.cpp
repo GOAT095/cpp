@@ -6,12 +6,15 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 22:56:14 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 23:29:28 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/04 23:31:51 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
-
+ Intern::Intern(){}
+ Intern::Intern(const Intern& obj){}
+Intern::Intern& operator = (const Intern& obj){}
+Intern::~Intern(){}
 
 void Intern::P(void)
 {

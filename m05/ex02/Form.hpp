@@ -18,7 +18,7 @@ class Form{
         Form& operator = (const Form& obj);
         virtual ~Form();
         
-        virtual void ShrubberyCreationForm::execute(Bureaucrat const &executor) const = 0;
+        virtual void execute(Bureaucrat const &executor) const = 0;
         std::string getName() const;
         void setName(std::string newname);
 

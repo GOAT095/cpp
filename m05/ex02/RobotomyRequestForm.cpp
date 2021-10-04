@@ -16,7 +16,9 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& obj)
 
 RobotomyRequestForm& RobotomyRequestForm::operator = (const RobotomyRequestForm& obj)
 {
-    this->setSigne(obj.isSigned());
+    this->setExecGrade(obj.getExecGrade());
+    this->setSignGrade(obj.getSignGrade());
+    this->setIsSigned(obj.getIsSigned());
     return *this;
 }
 
@@ -27,7 +29,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-    if (executor.getGrade() > this->getExecGrade() || !this->isSigned())
+    if (executor.getGrade() > this->getExecGrade() || !this->getIsSigned())
     {
         if (executor.getGrade() > this->getExecGrade())
             throw Form::GradeTooLowException();

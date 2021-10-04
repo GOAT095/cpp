@@ -6,12 +6,11 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:33 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/03 18:12:30 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/04 17:11:04 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
 
 Bureaucrat::Bureaucrat()
 {

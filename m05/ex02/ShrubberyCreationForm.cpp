@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 12:50:18 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 13:42:02 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/04 17:31:36 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& obj)
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator = (const ShrubberyCreationForm& obj)
 {
-    this->setSignGrade(obj.getIsSigned());
+    this->setExecGrade(obj.getExecGrade());
+    this->setSignGrade(obj.getSignGrade());
+    this->setIsSigned(obj.getIsSigned());
     return *this;
 }
 

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <stdexcept>
 #include "Form.hpp"
-
+#include "Bureaucrat.hpp"
 class ShrubberyCreationForm : public Form
 {
     private:

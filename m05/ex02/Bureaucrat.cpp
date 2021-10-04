@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:33 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 18:40:25 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/04 22:37:37 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void Bureaucrat::signForm(Form f)
     if (f.getIsSigned() == true)
     {   std::cout << "Form is already signed\n"; return ;}
     if (this->getGrade() < f.getSignGrade())
-    {   std::cout << "ureaucrat's grade is too low for the form\n"; return ;} 
+    {   std::cout << "Bureaucrat's grade is too low for the form\n"; return ;} 
     f.beSigned(*this);
     std::cout << this->name << "signs " << f.getName() << std::endl;
 }

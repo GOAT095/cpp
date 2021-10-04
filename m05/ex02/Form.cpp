@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 16:49:56 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 19:04:43 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/04 22:35:54 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ std::ostream &operator<<(std::ostream & o, Form const &obj)
 void Form::beSigned(Bureaucrat b)
 {
     if (b.getGrade() > this->gradesigne)
-        throw Form::GradeTooLowException();
+        throw Form::GradeTooHighException();
     this->is_signed = true;
 }
 

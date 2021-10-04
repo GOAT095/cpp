@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 12:50:18 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 18:28:19 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/04 18:57:58 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 {
-    std::cout << "ShrubberyCreationForm Default constructor\n";
+    // std::cout << "ShrubberyCreationForm Default constructor\n";
 }
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : Form("ShrubberyCreationForm", 145, 137), Target(target)
 {
-    std::cout << this->getName() << " constructor\n";
+    // std::cout << this->getName() << " constructor\n";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& obj)
@@ -36,7 +36,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator = (const ShrubberyCreatio
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-    std::cout << this->getName() << " dead\n";
+    // std::cout << this->getName() << " dead\n";
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
@@ -68,3 +68,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     output << "/\\/\\/\\/\\/\\/.######.\\/\\/\\/\\/\\ \n";
     output.close();
 }
+
+// std::ostream &operator<<(std::ostream & o, ShrubberyCreationForm const &obj)
+// {
+//     o << obj.getName() << ", signed ? : " << obj.getIsSigned() << " sign grade: " << obj.getSignGrade() <<".\n";;
+//     return o;
+// }

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <stdexcept>
 // #include "Bureaucrat.hpp"
+#include <fstream>
 class Bureaucrat;
 
 class Form{

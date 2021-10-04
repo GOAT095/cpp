@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 12:50:18 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 17:31:36 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/04 18:23:01 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,24 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
             throw Form::GradeTooLowException();
         throw Form::notSignedException();
     }
+    std::ofstream output;
+    output.open(this->_Target + "_shrubbery");
+    output << "                  * * \n";
+    output << "           *    *  *  \n";
+    output << "      *  *    *     *  * \n";
+    output << "     *     *    *  *    * \n";
+    output << " * *   *    *    *    *   * \n";
+    output << " *     *  *    * * .#  *   * \n";
+    output << " *   *     * #.  .# *   * \n";
+    output << "  *     \"#.  #: #\" * *    * \n";
+    output << " *   * * \"#. ##\"       * \n";
+    output << "   *       \"### \n";
+    output << "             \"## \n";
+    output << "              ##. \n";
+    output << "              .##: \n";
+    output << "              :### \n";
+    output << "              ;### \n";
+    output << "            ,####. \n";
+    output << "/\\/\\/\\/\\/\\/.######.\\/\\/\\/\\/\\ \n";
+    output.close();
 }

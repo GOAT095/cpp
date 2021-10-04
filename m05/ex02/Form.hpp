@@ -32,19 +32,20 @@ class Form{
         void setIsSigned(bool newgrade);
 
 
-        class GradeTooHighException :public std::exception
+        class   GradeTooHighException : public std::exception
         {
-            const char * what () const throw () //so it doesnt throw
-            {
-                return "grade is too hight !\n";
-            }
+            public:
+                virtual const char* what() const throw();
         };
-        class GradeTooLowException :public std::exception
+        class   GradeTooLowException : public std::exception
         {
-            const char * what () const throw ()
-            {
-                return "grade is too low !\n";
-            }
+            public:
+                virtual const char* what() const throw();
+        };
+        class   notSignedException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
         };
         
         void beSigned(Bureaucrat b);

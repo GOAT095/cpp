@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 16:49:56 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 00:35:03 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/04 13:39:52 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,23 @@ void Form::beSigned(Bureaucrat b)
     if (b.getGrade() < this->gradesigne)
         throw Form::GradeTooLowException();
     this->is_signed = true;
+}
+
+//prettier exception
+const char* Form::GradeTooHighException::what() const throw()
+{
+    std::cout << Red;
+    return ("Form Grade too High\n");
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+    std::cout << Red;
+    return ("Form Grade too Low\n");
+}
+
+const char* Form::notSignedException::what() const throw()
+{
+    std::cout << Red;
+    return ("Form not Signed\n");
 }

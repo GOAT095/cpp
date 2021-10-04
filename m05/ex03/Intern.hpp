@@ -17,6 +17,10 @@ class Intern{
         ~Intern();
 
         Form *makeForm(std::string s1, std::string s2);
-        
+        void P(void);
+        void S(void);
+        void R(void);
+        void Error(void);
+        void wichform( std::string form );
 };
 

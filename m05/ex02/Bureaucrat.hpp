@@ -14,6 +14,8 @@ class Bureaucrat{
         Bureaucrat& operator = (const Bureaucrat& obj);
         ~Bureaucrat();
 
+        void    executeForm(Form const & form);
+
         std::string getName(void) const;
         int getGrade(void) const;
 

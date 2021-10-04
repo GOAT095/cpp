@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:33 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 17:11:04 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/04 18:31:01 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,15 @@ void Bureaucrat::signForm(Form f)
     {   std::cout << "ureaucrat's grade is too low for the form\n"; return ;} 
     f.beSigned(*this);
     std::cout << this->name << "signs " << f.getName() << std::endl;
+}
+
+void Bureaucrat::executeForm(Form const & form)
+{
+ 
+    try{ // It must attempt to execute the form
+        form.execute(*this);
+        std::cout << this->name << " execute " << form.getName() << "\n";
+    } catch (std::exception &e){
+        std::cout << e.what();
+    }
 }

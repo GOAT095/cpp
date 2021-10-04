@@ -29,8 +29,8 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
     if (executor.getGrade() > this->getExecGrade() || !this->isSigned())
     {
-        std::cout << this->getName() << " cannot be executed ";
         if (executor.getGrade() > this->getExecGrade())
             throw Form::GradeTooLowException();
+        throw Form::notSignedException();
     }
 }

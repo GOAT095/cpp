@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 13:17:48 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 13:28:03 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/04 13:42:17 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
     if (executor.getGrade() > this->getExecGrade() || !this->getIsSigned())
     {
-        std::cout << this->getName() << " cannot be executed ";
         if (executor.getGrade() > this->getExecGrade())
             throw Form::GradeTooLowException();
+        throw Form::notSignedException();
     }
 }

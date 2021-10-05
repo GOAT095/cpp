@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:33 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 22:46:23 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/05 13:07:56 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Bureaucrat &Bureaucrat::operator = (const Bureaucrat& obj)
 }
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat was slaughtered\n";
+    // std::cout << "Bureaucrat was slaughtered\n";
 }
 
 //getters && setters

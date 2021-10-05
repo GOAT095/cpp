@@ -3,7 +3,7 @@
 #include <stdexcept>
 
 class Bureaucrat{
-    protected:
+    private:
         std::string name;
         int   grade;
     public:

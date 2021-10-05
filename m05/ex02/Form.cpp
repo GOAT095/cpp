@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 16:49:56 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 22:47:02 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/05 13:50:53 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Form::Form(std::string newname, int gradesigne, int gradeexec) : name(newname), 
 Form::Form(const Form& obj)
 {
     *this = obj;
-    std::cout << "Form copy constractor was called\n";
+    // std::cout << "Form copy constractor was called\n";
 }
 Form &Form::operator = (const Form& obj)
 {
@@ -46,7 +46,7 @@ Form &Form::operator = (const Form& obj)
 }
 Form::~Form()
 {
-    std::cout << "Form was slaughtered\n";
+    // std::cout << "Form was slaughtered\n";
 }
 
 //getters // setters

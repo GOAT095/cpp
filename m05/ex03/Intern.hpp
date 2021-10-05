@@ -19,7 +19,6 @@ class Intern{
         Form *P(void);
         Form *S(void);
         Form *R(void);
-        Form *Error(void);
         Form *wichform( std::string form );
 };
 

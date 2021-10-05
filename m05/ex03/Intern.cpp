@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 22:56:14 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/05 13:27:17 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/05 13:57:35 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,25 @@ Form *Intern::S(void)
     Form *f = new ShrubberyCreationForm();
     return(f);
 }
-Form *Intern::Error(void)
-{
-    std::cout << "Unknown Form Bruhhhhh \n";
-    return(NULL);
-}
 
 Form *Intern::wichform( std::string form )
 {
     std::string s[4]={
-        "PresidentialPardonForm","RobotomyRequestForm","ShrubberyCreationForm","ERROR"
+        "presidential request","robotomy request","shrubbery request"
     };
 
     Form *(Intern::*f[4])(void) = {
-        &Intern::P, &Intern::R, &Intern::S, &Intern::Error
+        &Intern::P, &Intern::R, &Intern::S
     };
-    for (int i=0; i<4;i++)
+    for (int i=0; i<3;i++)
     {
         if(form == s[i])
-            return((this->*f[i])());std::cout << "Intern creates " << form << "\n";
+        {
+            std::cout << "Intern creates " << form << "\n";
+            return((this->*f[i])());
+        }  
     }
+    std::cout << "Unknown Form Bruuuuuuuh\n";
     return (NULL);
 }
 

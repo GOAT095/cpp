@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 22:56:14 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 23:31:51 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/05 12:54:49 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@
 Intern::Intern& operator = (const Intern& obj){}
 Intern::~Intern(){}
 
-void Intern::P(void)
+Form *Intern::P(void)
 {
     Form *f = new PresidentialPardonForm();
-    return(f);
+    return(*f);
 }
 
-void Intern::R(void)
+Form *Intern::R(void)
 {
     Form *f = new RobotomyRequestForm();
-    return(f);
+    return(*f);
 }
 
-void Intern::S(void)
+Form *Intern::S(void)
 {
     Form *f = new ShrubberyCreationForm();
-    return(f);
+    return(*f);
 }
-void Inter::Error(void)
+Form *Inter::Error(void)
 {
     std::cout << "unknown Form Bruhhhhh \n";
-    return(f);
+    return(NULL);
 }
 
 void Intern::wichform( std::string form )
@@ -45,8 +45,8 @@ void Intern::wichform( std::string form )
         "PresidentialPardonForm","RobotomyRequestForm","ShrubberyCreationForm","ERROR"
     };
 
-    void (Karen::*f[4])(void) = {
-        &Karen::p, &Karen::R, &Karen::S, &Karen::error
+    void (Intern::*f[4])(void) = {
+        &Intern::p, &Intern::R, &Intern::S, &Intern::error
     };
     for (int i=0; i<4;i++)
     {

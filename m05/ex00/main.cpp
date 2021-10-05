@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:45 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/03 15:31:51 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/05 23:19:40 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int main(void)
     try{
         Bureaucrat b1("B1", 149); // good grade
         std::cout << b1;
-        b1.gradeDec(); // new grade + 1 throw exception if > 150
+        b1.gradeDec();
+        // b1.gradeDec(); // new grade + 1 throw exception if > 150
         std::cout << b1;
     }
     catch (std::exception &e){

@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:45 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/03 18:15:27 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/05 23:28:03 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main()
         std::cout << b1;
         Form f1("F1", 10, 5);
         std::cout << f1;
-        //f1.beSigned(b1);
+        f1.beSigned(b1);
         b1.signForm(f1);
         std::cout << f1;
     } catch (std::exception& e){

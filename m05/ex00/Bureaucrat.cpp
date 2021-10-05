@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:33 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/02 17:31:08 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/05 23:28:21 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Bureaucrat::Bureaucrat()
 {
-    std::cout << "bureaucrat default constractor was called\n";
+    // std::cout << "bureaucrat default constractor was called\n";
 }
 Bureaucrat::Bureaucrat(std::string newname, int newdgrade) : name(newname), grade(newdgrade)
 {
@@ -23,16 +23,16 @@ Bureaucrat::Bureaucrat(std::string newname, int newdgrade) : name(newname), grad
         throw Bureaucrat::GradeTooHighException();
     if (grade > 150)
         throw Bureaucrat::GradeTooLowException();
-    std::cout << "Bureaucrat type constractor was called\n";
+    // std::cout << "Bureaucrat type constractor was called\n";
 }
 Bureaucrat::Bureaucrat(const Bureaucrat& obj)
 {
     *this = obj;
-    std::cout << "Bureaucrat copy constractor was called\n";
+    // std::cout << "Bureaucrat copy constractor was called\n";
 }
 Bureaucrat &Bureaucrat::operator = (const Bureaucrat& obj)
 {
-    std::cout << "Bureaucrat assignement constractor was called\n";
+    // std::cout << "Bureaucrat assignement constractor was called\n";
     this->name = obj.name;
     this->grade = obj.grade;
     return *this;
@@ -40,7 +40,7 @@ Bureaucrat &Bureaucrat::operator = (const Bureaucrat& obj)
 }
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat was slaughtered\n";
+    // std::cout << "Bureaucrat was slaughtered\n";
 }
 
 //getters && setters

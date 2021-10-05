@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 16:49:56 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/04 00:35:03 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/05 23:27:59 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Form::Form()
 {
-    std::cout << "Form default constractor was called\n";
+    // std::cout << "Form default constractor was called\n";
 }
 Form::Form(std::string newname, int gradesigne, int gradeexec) : name(newname), gradesigne(gradesigne), gradeexec(gradeexec) 
 {
@@ -33,11 +33,11 @@ Form::Form(std::string newname, int gradesigne, int gradeexec) : name(newname), 
 Form::Form(const Form& obj)
 {
     *this = obj;
-    std::cout << "Form copy constractor was called\n";
+    // std::cout << "Form copy constractor was called\n";
 }
 Form &Form::operator = (const Form& obj)
 {
-    std::cout << "Form assignement constractor was called\n";
+    // std::cout << "Form assignement constractor was called\n";
     this->name = obj.name;
     this->gradesigne = obj.gradesigne;
     this->gradeexec = obj.gradeexec;
@@ -46,7 +46,7 @@ Form &Form::operator = (const Form& obj)
 }
 Form::~Form()
 {
-    std::cout << "Form was slaughtered\n";
+    // std::cout << "Form was slaughtered\n";
 }
 
 //getters // setters

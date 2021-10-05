@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:45 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/05 14:00:27 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/05 15:09:05 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,11 @@ int main()
         if (rrf)
             std::cout << *rrf;
         std::cout << b1;
-        (*rrf).beSigned(b1); // comment this to test signed execution exception
-        b1.executeForm(*rrf);
+        if (rrf)
+        {   
+            (*rrf).beSigned(b1); // comment this to test signed execution exception
+            b1.executeForm(*rrf);
+        }
         delete rrf;
     } catch (std::exception& e){
         std::cout << e.what();

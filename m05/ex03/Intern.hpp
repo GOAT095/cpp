@@ -16,9 +16,9 @@ class Intern{
         ~Intern();
 
         Form *makeForm(std::string s1, std::string s2);
-        Form *P(void);
-        Form *S(void);
-        Form *R(void);
-        Form *wichform( std::string form );
+        Form *P(std::string target);
+        Form *S(std::string target);
+        Form *R(std::string targetid);
+        Form *wichform( std::string form, std::string target );
 };
 

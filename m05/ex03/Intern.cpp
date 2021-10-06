@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 22:56:14 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/05 23:16:35 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/06 13:05:42 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,47 +23,46 @@ Intern &Intern::operator = (const Intern& obj)
 }
 Intern::~Intern(){}
 
-Form *Intern::P(void)
+Form *Intern::P(std::string target)
 {
-    Form *f = new PresidentialPardonForm();
+    Form *f = new PresidentialPardonForm(target);
     return(f);
 }
 
-Form *Intern::R(void)
+Form *Intern::R(std::string target)
 {
-    Form *f = new RobotomyRequestForm();
+    Form *f = new RobotomyRequestForm(target);
     return(f);
 }
 
-Form *Intern::S(void)
+Form *Intern::S(std::string target)
 {
-    Form *f = new ShrubberyCreationForm();
+    Form *f = new ShrubberyCreationForm(target);
     return(f);
 }
 
-Form *Intern::wichform( std::string form )
+Form *Intern::wichform( std::string form , std::string target)
 {
-    std::string s[4]={
+    std::string s[3]={
         "presidential request","robotomy request","shrubbery request"
     };
 
-    Form *(Intern::*f[4])(void) = {
+    Form *(Intern::*f[3])(std::string target) = {
         &Intern::P, &Intern::R, &Intern::S
     };
-    for (int i=0; i<3;i++)
+    for (int i=0; i < 3;i++)
     {
         if(form == s[i])
         {
             std::cout << "Intern creates " << form << "\n";
-            return((this->*f[i])());
+            return((this->*f[i])(target));
         }  
     }
     std::cout << "Unknown Form Bruuuuuuuh\n";
     return (NULL);
 }
 
-Form *Intern::makeForm(std::string s1, std::string s2)
+Form *Intern::makeForm(std::string s1, std::string target)
 {
-    (void)s2;
-    return(wichform(s1));
+    return(wichform(s1, target));
 }

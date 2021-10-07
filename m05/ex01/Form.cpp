@@ -6,18 +6,14 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 16:49:56 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/05 23:27:59 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/07 13:15:26 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form()
-{
-    // std::cout << "Form default constractor was called\n";
-}
-Form::Form(std::string newname, int gradesigne, int gradeexec) : name(newname), gradesigne(gradesigne), gradeexec(gradeexec) 
+Form::Form(const std::string newname, const int gradesigne, const int gradeexec) : name(newname), gradesigne(gradesigne), gradeexec(gradeexec) 
 {
     this->is_signed = false;
     if (gradesigne < 1)
@@ -30,7 +26,7 @@ Form::Form(std::string newname, int gradesigne, int gradeexec) : name(newname), 
         throw Form::GradeTooLowException();
     std::cout << "Form type constractor was called\n";
 }
-Form::Form(const Form& obj)
+Form::Form(const Form& obj): name(obj.name), gradesigne (obj.gradesigne), gradeexec(obj.gradeexec)
 {
     *this = obj;
     // std::cout << "Form copy constractor was called\n";
@@ -38,11 +34,8 @@ Form::Form(const Form& obj)
 Form &Form::operator = (const Form& obj)
 {
     // std::cout << "Form assignement constractor was called\n";
-    this->name = obj.name;
-    this->gradesigne = obj.gradesigne;
-    this->gradeexec = obj.gradeexec;
     return *this;
-    
+    (void) obj;
 }
 Form::~Form()
 {
@@ -55,28 +48,28 @@ std::string Form::getName() const
 {
     return (this->name);
 }
-void Form::setName(std::string newname)
-{
-    this->name = newname;
-}
+// void Form::setName(std::string newname)
+// {
+//     this->name = newname;
+// }
 
 int Form::getSignGrade(void) const
 {
     return (this->gradesigne);
 }
-void Form::setSignGrade(int newgrade)
-{
-    this->gradesigne = newgrade;
-}
+// void Form::setSignGrade(int newgrade)
+// {
+//     this->gradesigne = newgrade;
+// }
 
 int Form::getExecGrade(void) const
 {
     return (this->gradeexec);
 }
-void Form::setExecGrade(int newgrade)
-{
-    this->gradeexec = newgrade;
-}
+// void Form::setExecGrade(int newgrade)
+// {
+//     this->gradeexec = newgrade;
+// }
 
 bool Form::getIsSigned(void) const
 {

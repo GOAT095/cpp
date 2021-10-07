@@ -3,23 +3,22 @@
 #include <iostream>
 #include <stdexcept>
 // #include "Bureaucrat.hpp"
-#include <fstream>
 class Bureaucrat;
 
 class Form{
     private:
-        std::string  name;
+        const std::string  name;
         bool    is_signed;
-        int gradesigne;
-        int gradeexec;
-    public:
+        const int gradesigne;
+        const int gradeexec;
         Form();
+    public:
         Form(std::string newname, int gradesigne, int gradeexec);
         Form(const Form& obj);
         Form& operator = (const Form& obj);
-        virtual ~Form();
+        ~Form();
         
-        virtual void execute(Bureaucrat const &executor) const = 0;
+        
         std::string getName() const;
         void setName(std::string newname);
 
@@ -33,20 +32,19 @@ class Form{
         void setIsSigned(bool newgrade);
 
 
-        class   GradeTooHighException : public std::exception
+        class GradeTooHighException :public std::exception
         {
-            public:
-                virtual const char* what() const throw();
+            const char * what () const throw () //so it doesnt throw
+            {
+                return "grade is too hight !\n";
+            }
         };
-        class   GradeTooLowException : public std::exception
+        class GradeTooLowException :public std::exception
         {
-            public:
-                virtual const char* what() const throw();
-        };
-        class   notSignedException : public std::exception
-        {
-            public:
-                virtual const char* what() const throw();
+            const char * what () const throw ()
+            {
+                return "grade is too low !\n";
+            }
         };
         
         void beSigned(Bureaucrat b);

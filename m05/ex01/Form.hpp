@@ -7,12 +7,12 @@ class Bureaucrat;
 
 class Form{
     private:
-        std::string  name;
+        const std::string  name;
         bool    is_signed;
-        int gradesigne;
-        int gradeexec;
-    public:
+        const int gradesigne;
+        const int gradeexec;
         Form();
+    public:
         Form(std::string newname, int gradesigne, int gradeexec);
         Form(const Form& obj);
         Form& operator = (const Form& obj);

@@ -1,25 +1,23 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm()
-{
-    // std::cout << "RobotomyRequestForm Default constructor\n";
-}
+// RobotomyRequestForm::RobotomyRequestForm()
+// {
+//     // std::cout << "RobotomyRequestForm Default constructor\n";
+// }
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) : Form("RobotomyRequestForm", 72, 45), Target(target)
 {
     // std::cout << this->getName() << " constructor\n";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& obj)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& obj): Form("ShrubberyCreationForm", 145, 137)
 {
     *this = obj;
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator = (const RobotomyRequestForm& obj)
 {
-    this->setExecGrade(obj.getExecGrade());
-    this->setSignGrade(obj.getSignGrade());
-    this->setIsSigned(obj.getIsSigned());
     return *this;
+    (void) obj;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()

@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 16:49:56 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/07 18:40:48 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/07 18:43:14 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Form::Form(const std::string newname, const int gradesigne, const int gradeexec)
         throw Form::GradeTooHighException();
     if (gradeexec > 150)
         throw Form::GradeTooLowException();
-    std::cout << "Form type constractor was called\n";
+    // std::cout << "Form type constractor was called\n";
 }
 Form::Form(const Form& obj): name(obj.name), gradesigne (obj.gradesigne), gradeexec(obj.gradeexec)
 {

@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:45 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/06 14:51:36 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/07 18:43:58 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
         b1.gradeDec(); // new grade + 1
         std::cout << b1;
         b1.gradeInc(); // new grade - 1
-        //b1.gradeInc(); // exception throw (1 - 1 = 0) 1 is highest
+        b1.gradeInc(); // exception throw (1 - 1 = 0) 1 is highest
         std::cout << b1;
     }
     catch (std::exception &e){

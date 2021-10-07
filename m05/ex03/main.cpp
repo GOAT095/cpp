@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:45 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/05 23:07:33 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/07 16:38:47 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int main()
         Bureaucrat b1("B1", 3); // change the grade to test execution exception
         Intern someRandomIntern;
         Form* rrf;
-        rrf = someRandomIntern.makeForm("presidential request", "Bender");
+        rrf = someRandomIntern.makeForm("shrubbery request", "Bender");
         if (rrf)
             std::cout << *rrf;
         std::cout << b1;

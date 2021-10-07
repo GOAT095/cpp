@@ -7,13 +7,13 @@
 class Bureaucrat;
 
 class Form{
-    private:
-        std::string  name;
+     private:
+        const std::string  name;
         bool    is_signed;
-        int gradesigne;
-        int gradeexec;
-    public:
+        const int gradesigne;
+        const int gradeexec;
         Form();
+    public:
         Form(std::string newname, int gradesigne, int gradeexec);
         Form(const Form& obj);
         Form& operator = (const Form& obj);
@@ -21,13 +21,9 @@ class Form{
         
         virtual void execute(Bureaucrat const &executor) const = 0;
         std::string getName() const;
-        void setName(std::string newname);
 
         int getSignGrade(void) const;
-        void setSignGrade(int newgrade);
-
         int getExecGrade(void) const;
-        void setExecGrade(int newgrade);
 
         bool getIsSigned(void) const;
         void setIsSigned(bool newgrade);

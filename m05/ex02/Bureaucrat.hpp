@@ -5,7 +5,7 @@
 
 class Bureaucrat{
     private:
-        std::string name;
+        const std::string name;
         int   grade;
     public:
         Bureaucrat();
@@ -14,13 +14,10 @@ class Bureaucrat{
         Bureaucrat& operator = (const Bureaucrat& obj);
         ~Bureaucrat();
 
-        void    executeForm(Form const & form);
-
         std::string getName(void) const;
         int getGrade(void) const;
 
         void setGrade(int newgrade);
-        void setName(std::string newname);
 
         class GradeTooHighException :public std::exception
         {
@@ -39,7 +36,7 @@ class Bureaucrat{
         void gradeInc();
         void gradeDec();
         void signForm(Form f);
-        
+        void executeForm(Form const & form);
 };
 
 std::ostream &operator<<(std::ostream & o, Bureaucrat const &rhs);

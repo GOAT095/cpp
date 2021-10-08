@@ -6,12 +6,11 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 15:10:33 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/07 18:42:59 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/08 15:11:50 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
 
 Bureaucrat::Bureaucrat()
 {
@@ -33,9 +32,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat& obj)
 Bureaucrat &Bureaucrat::operator = (const Bureaucrat& obj)
 {
     // std::cout << "Bureaucrat assignement constractor was called\n";
-    this->name = obj.name;
-    this->grade = obj.grade;
     return *this;
+    (void)obj;
     
 }
 Bureaucrat::~Bureaucrat()
@@ -49,10 +47,10 @@ std::string Bureaucrat::getName(void) const
 {
     return (this->name);
 }
-void Bureaucrat::setName(std::string newname)
-{
-    this->name = newname;
-}
+// void Bureaucrat::setName(std::string newname)
+// {
+//     this->name = newname;
+// }
 int Bureaucrat::getGrade(void) const
 {
     return (this->grade);

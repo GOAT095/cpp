@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.cpp                                        :+:      :+:    :+:   */
+/*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 23:44:03 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/08 00:41:41 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/08 14:57:34 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ Convert::Convert(std::string value)
     Value = value;
 }
 
-Convert::Convert(const Convert& copy)
+Convert::Convert(const Convert& obj)
 {
-    *this = copy;
+    *this = obj;
 }
 
-Convert& Convert::operator = (const Convert& copy)
+Convert& Convert::operator = (const Convert& obj)
 {
-    Value = copy.getValue();
+    Value = obj.getValue();
     return *this;
 }
 

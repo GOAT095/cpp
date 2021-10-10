@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 23:44:03 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/10 13:34:25 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/10 14:05:32 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ std::string Convert::getValue() const
     return (this->Value);
 }
 
-void    setValue(std::string value)
+void	Convert::setValue(std::string value)
 {
     this->Value = value;
 }
@@ -51,11 +51,11 @@ void    print_it()
 // taouil algo
 
 
-Class::operator char()
+Convert::operator char()
 {
 	try
 	{
-		char c = std::stoi(_str);
+		char c = std::stoi(Value);
 		if (!std::isprint(c))
 			throw NotPrintableException();
 		std::cout << "char: '"<<c<<"'"<<std::endl;
@@ -70,11 +70,11 @@ Class::operator char()
 	return 0;
 }
 
-Class::operator int ()
+Convert::operator int ()
 {
 	try
 	{
-		int i = std::stoi(this->_str);
+		int i = std::stoi(this->Value);
 		std::cout << "int: " << i << std::endl;
 		return i;
 	}
@@ -84,11 +84,11 @@ Class::operator int ()
 	return 0;
 }
 
-Class::operator float()
+Convert::operator float()
 {
 	try
 	{
-		float f = std::stof(_str);
+		float f = std::stof(Value);
 		if (f != (int)f)
 			std::cout << "float: " << f << "f" << std::endl;
 		else
@@ -101,11 +101,11 @@ Class::operator float()
 	return 0;
 }
 
-Class::operator double()
+Convert::operator double()
 {
 	try
 	{
-		double d = std::stod(_str);
+		double d = std::stod(Value);
 		if (d != (int)d)
 			std::cout << "double: " << d << std::endl;
 		else
@@ -117,11 +117,16 @@ Class::operator double()
 	return 0;
 }
 
-void	Class::Scalar()
+void	Convert::print_it()
 {
 	(void)static_cast<char>(*this);
 	(void)static_cast<int>(*this);
 	(void)static_cast<float>(*this);
 	(void)static_cast<double>(*this);
 	
+}
+
+const char* Convert::NotPrintableException::what() const throw()
+{
+    return ("not printable\n");
 }

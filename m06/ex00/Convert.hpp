@@ -18,7 +18,13 @@ class Convert
         void    setValue(std::string value);
         void    print_it();
 
-        //operator char();
+
+        class   NotPrintableException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
+        };
+        operator char();
         operator int();
         operator float();
         operator double();

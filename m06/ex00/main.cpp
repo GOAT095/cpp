@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 23:44:13 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/08 15:07:50 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/10 15:45:07 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,19 @@
 
 int main(int ac, char **av)
 {
-    if (ac == 2)
+    try 
     {
-        Convert convert(av[1]);
-        std::cout << convert.getValue() << "\n";
-        convert.print_it();
+        if (ac == 2)
+        {
+            Convert convert(av[1]);
+            convert.print_it();
+        }
+        else 
+        {
+            std::cout << "Invalid Arguments";
+        }
     }
-    else 
-    {
-        std::cout << "Invalid Arguments";
-    }
+   catch(std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
 }

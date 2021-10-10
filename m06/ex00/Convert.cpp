@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 23:44:03 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/10 14:05:32 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/10 15:59:12 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ Convert::Convert(const Convert& obj)
 
 Convert& Convert::operator = (const Convert& obj)
 {
-    Value = obj.getValue();
+
+	Value = obj.getValue();
     return *this;
 }
 
@@ -53,21 +54,19 @@ void    print_it()
 
 Convert::operator char()
 {
-	try
-	{
-		char c = std::stoi(Value);
-		if (!std::isprint(c))
+	char c;
+	try {
+		if (std::stoi(Value) < 0 || std::stoi(Value) > 255)
 			throw NotPrintableException();
-		std::cout << "char: '"<<c<<"'"<<std::endl;
-		return c;
-	}
-	catch(NotPrintableException &e){
-		std::cout << e.what() << std::endl;
-	}
-	catch(std::exception &e){
+		c = std::stoi(Value);
+		if (std::isprint(c))
+			std::cout << "char: '"<<c<<"'" << std::endl;
+		else
+			std::cout << "char: Non displayable" << std::endl;
+	} catch (std::exception &e) {
 		std::cout << "char: impossible" << std::endl;
 	}
-	return 0;
+	return c;
 }
 
 Convert::operator int ()
@@ -77,8 +76,7 @@ Convert::operator int ()
 		int i = std::stoi(this->Value);
 		std::cout << "int: " << i << std::endl;
 		return i;
-	}
-	catch(std::exception &e){
+	} catch (std::exception &e) {
 		std::cout << "int: impossible" << std::endl;
 	}
 	return 0;
@@ -86,32 +84,28 @@ Convert::operator int ()
 
 Convert::operator float()
 {
-	try
-	{
+	try {
 		float f = std::stof(Value);
 		if (f != (int)f)
 			std::cout << "float: " << f << "f" << std::endl;
 		else
 			std::cout << "float: " << f << ".0f" << std::endl;
 		return f;
-	}
-	catch(std::exception &e){
-		std::cout << "float: impossible" <<std::endl;
+	} catch (std::exception &e) {
+		std::cout << "float: impossible" << std::endl;
 	}
 	return 0;
 }
 
 Convert::operator double()
 {
-	try
-	{
+	try {
 		double d = std::stod(Value);
 		if (d != (int)d)
 			std::cout << "double: " << d << std::endl;
 		else
 			std::cout << "double: " << d << ".0"<<std::endl;
-	}
-	catch(std::exception &e){
+	} catch (std::exception &e) {
 		std::cout << "double: impossible" << std::endl;
 	}
 	return 0;
@@ -128,5 +122,5 @@ void	Convert::print_it()
 
 const char* Convert::NotPrintableException::what() const throw()
 {
-    return ("not printable\n");
+    return ("impossible\n");
 }

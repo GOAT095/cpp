@@ -66,8 +66,8 @@ void identify(Base  &p)
 int main ()
 {
     Base *z = generate();
-    identify(*z);
     identify(z);
+    identify(*z);
     delete z;
     return 0;
 }

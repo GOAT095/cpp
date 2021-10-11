@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 23:44:03 by anassif           #+#    #+#             */
-/*   Updated: 2021/10/10 15:59:12 by anassif          ###   ########.fr       */
+/*   Updated: 2021/10/11 14:19:07 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ void    print_it()
 {
     
 }
-
-// taouil algo
 
 
 Convert::operator char()

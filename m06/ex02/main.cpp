@@ -28,6 +28,7 @@ Base *generate()
         ret = new C;
     return ret;
 }
+//dynamic_cast for a pointer type fails it returns a null pointer
 
 void identify(Base *p)
 {
@@ -38,6 +39,7 @@ void identify(Base *p)
     else if (dynamic_cast<C*>(p))
         std::cout << "C *\n";
 }
+// when it fails for a reference type it can't return a null reference so you have to catch it
 void identify(Base  &p)
 {
     try

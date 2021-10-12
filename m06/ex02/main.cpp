@@ -32,11 +32,11 @@ Base *generate()
 void identify(Base *p)
 {
     if (dynamic_cast<A*>(p))
-        std::cout << "A*\n";
+        std::cout << "A *\n";
     else if (dynamic_cast<B*>(p))
-        std::cout << "B*\n";
+        std::cout << "B *\n";
     else if (dynamic_cast<C*>(p))
-        std::cout << "C*\n";
+        std::cout << "C *\n";
 }
 void identify(Base  &p)
 {
@@ -44,23 +44,24 @@ void identify(Base  &p)
     {
         (void)dynamic_cast<A&>(p);
         std::cout << "A &\n";
-            try{
-                (void)dynamic_cast<B&>(p);
-                std::cout << "B &\n";
-                {
-                    try{
-                        (void)dynamic_cast<C&>(p);
-                        std::cout << "C &\n";
-                    }
-                    catch(std::exception &e)
-                    {std::cout << "dawdawwdawdwawd\n";}
-                }
-            }
-            catch(std::exception &e)
-                    {std::cout << "dawdawwdawdwawd\n";}
+            
     }
     catch (std::bad_cast& bc)
-    {std::cout << "bad_cast caught: " << bc.what() << '\n';}
+    {
+        try{
+                (void)dynamic_cast<B&>(p);
+                std::cout << "B &\n";
+        }
+        catch(std::exception &e){
+           try{
+                    (void)dynamic_cast<C&>(p);
+                    std::cout << "C &\n";
+                    }
+                    catch(std::exception &e)
+                        {std::cout << "";}
+            }
+
+    }
 }
 
 int main ()

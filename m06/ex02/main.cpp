@@ -57,8 +57,8 @@ void identify(Base  &p)
                     (void)dynamic_cast<C&>(p);
                     std::cout << "C &\n";
                     }
-                    catch(std::exception &e)
-                        {std::cout << "";}
+                    catch(std::bad_cast &e)
+                        {std::cout << e.what() << std::endl;}
             }
 
     }

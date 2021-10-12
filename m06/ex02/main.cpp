@@ -28,7 +28,7 @@ Base *generate()
         ret = new C;
     return ret;
 }
-//dynamic_cast for a pointer type fails it returns a null pointer
+//if dynamic_cast for a pointer type fails it returns a null pointer
 
 void identify(Base *p)
 {

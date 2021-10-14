@@ -1,6 +1,6 @@
 NAME = convert
 
-SRCS = main.cpp reinterpret.cpp 
+SRCS = main.cpp
 
 FLAGS = -Wall -Wextra -Werror
 

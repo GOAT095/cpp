@@ -23,7 +23,7 @@ int main(int ac, char **av)
         }
         else 
         {
-            std::cout << "Invalid Arguments";
+            std::cout << "Invalid Arguments\n";
         }
     }
    catch(std::exception &e){

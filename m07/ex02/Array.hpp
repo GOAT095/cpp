@@ -36,18 +36,30 @@ class Array
     {
         *this = obj;
     }
-    Array operator = (const Brain& obj)
+    Array operator = (const Array& obj)
     {
         this->lengh = obj.lengh;
-        for(int i = 0 ; i < 100 ; i++)
+        try
         {
-            arr[i] = obj.arr[i];
+            arr = new T[obj.lengh]();
+            for(int i = 0 ; i < 100 ; i++)
+            {
+                arr[i] = obj.arr[i];
+            }
+            return *this;
         }
-        return *this;
+        catch(std::bad_alloc &e)
+        {
+            std::cout << "bad_alloc caught: " << e.what() << std::endl;
+        }
+        return 0;
     }
 
-    ~Array(){std::cout << "BOOOM\n";}
-
+    ~Array()
+    {
+    delete[] this->arr;
+    std::cout << "BOOOM\n";
+    }
 
 
 };

@@ -39,7 +39,7 @@ class Array
             try
             {
                 arr = new T[length];
-                for(int i = 0 ; i < obj.length ; i++)
+                for(unsigned int i = 0 ; i < obj.length ; i++)
                 {
                     arr[i] = obj.arr[i];
                 }
@@ -68,7 +68,7 @@ class Array
         }
 
         T& operator [] (unsigned int i){
-            if (i < 0 || i >= this->lenght)
+            if (i < 0 || i >= this->length)
                 throw std::out_of_range("out of range");
             return arr[i];
         }

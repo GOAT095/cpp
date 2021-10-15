@@ -41,8 +41,8 @@ class Array
         this->lengh = obj.lengh;
         try
         {
-            arr = new T[obj.lengh]();
-            for(int i = 0 ; i < 100 ; i++)
+            arr = new T[lengh];
+            for(int i = 0 ; i < obj.lengh ; i++)
             {
                 arr[i] = obj.arr[i];
             }
@@ -57,8 +57,8 @@ class Array
 
     ~Array()
     {
-    delete[] this->arr;
-    std::cout << "BOOOM\n";
+        delete[] this->arr;
+        std::cout << "BOOOM\n";
     }
 
 

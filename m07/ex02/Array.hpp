@@ -31,25 +31,29 @@ class Array
         }
         Array(Array const &obj)
         {
+            //std::cout << "!!!!!" << std::endl;
             *this = obj;
+            
         }
-        Array operator = (const Array& obj)
+        Array &operator = (const Array& obj)
         {
-            this->length = obj.length;
-            try
-            {
-                arr = new T[length];
-                for(unsigned int i = 0 ; i < obj.length ; i++)
+            length = obj.length;
+            
+    
+                try
                 {
-                    arr[i] = obj.arr[i];
+                    arr = new T[length];
+                    for(unsigned int i = 0 ; i < length ; i++)
+                    {
+                        arr[i] = obj.arr[i];
+                    }
+                    return *this;
                 }
-                return *this;
-            }
-            catch(std::bad_alloc &e)
-            {
-                std::cout << "bad_alloc caught: " << e.what() << std::endl;
-            }
-            return 0;
+                catch(std::bad_alloc &e)
+                {
+                    std::cout << "bad_alloc caught: " << e.what() << std::endl;
+                }
+            return *this;            
         }
 
         ~Array()

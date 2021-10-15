@@ -2,9 +2,9 @@
 
 int main()
 {
-    // std::cout << " ****** empty test ****** \n";
-    // Array<std::string> arr0;
-    // std::cout << arr0;
+    std::cout << " ****** empty test ****** \n";
+    Array<std::string> arr0;
+    std::cout << arr0;
     // std::cout << " ****** string test ****** \n";
     // int size = 5;
     // Array<std::string> arr(size);

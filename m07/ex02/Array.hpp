@@ -6,60 +6,83 @@ template <typename T>
 
 class Array
 {
-    T *arr;
-    unsigned int lengh;
+    public:
 
-    Array()
-    {  
-        try
-        {
-            arr = new T(); // () so takes the default value
-        }
-        catch(std::bad_alloc &e)
-        {
-            std::cout << "bad_alloc caught: " << e.what() << std::endl;
-        }
-    }
+        T *arr;
+        unsigned int length;
 
-    Array(unsigned int i)
-    {
-        try
+        Array()
         {
-            arr = new T[i]();
+            arr = new T; // () so takes the default value of the type
+            length = 0;
         }
-        catch(std::bad_alloc &e)
+
+        Array(unsigned int i)
         {
-            std::cout << "bad_alloc caught: " << e.what() << std::endl;
-        }
-    }
-    Array(Array const &obj)
-    {
-        *this = obj;
-    }
-    Array operator = (const Array& obj)
-    {
-        this->lengh = obj.lengh;
-        try
-        {
-            arr = new T[lengh];
-            for(int i = 0 ; i < obj.lengh ; i++)
+            length = i;
+            try
             {
-                arr[i] = obj.arr[i];
+                arr = new T[i]();
             }
-            return *this;
+            catch(std::bad_alloc &e)
+            {
+                std::cout << "bad_alloc caught: " << e.what() << std::endl;
+            }
         }
-        catch(std::bad_alloc &e)
+        Array(Array const &obj)
         {
-            std::cout << "bad_alloc caught: " << e.what() << std::endl;
+            *this = obj;
         }
-        return 0;
+        Array operator = (const Array& obj)
+        {
+            this->length = obj.length;
+            try
+            {
+                arr = new T[length];
+                for(int i = 0 ; i < obj.length ; i++)
+                {
+                    arr[i] = obj.arr[i];
+                }
+                return *this;
+            }
+            catch(std::bad_alloc &e)
+            {
+                std::cout << "bad_alloc caught: " << e.what() << std::endl;
+            }
+            return 0;
+        }
+
+        ~Array()
+        {
+            if (length)
+                delete[] arr;
+            std::cout << "BOOOM\n";
+        }
+
+        unsigned int getSize() const{
+            return this->length;
+        }
+
+        T* getArr(){
+            return this->arr;
+        }
+
+        T& operator [] (unsigned int i){
+            if (i < 0 || i >= this->lenght)
+                throw std::out_of_range("out of range");
+            return arr[i];
+        }
+
+
+};
+
+template <typename T>
+std::ostream& operator << (std::ostream& o, Array<T> &obj){
+    unsigned int j = obj.getSize();
+    T *ptr = obj.getArr();
+    o << "size : " << j << "\n";
+    for (unsigned int i = 0; i < j ; i ++){
+        o << "'" << ptr[i] << "'\n";
     }
-
-    ~Array()
-    {
-        delete[] this->arr;
-        std::cout << "BOOOM\n";
-    }
-
-
+    return o;
 };

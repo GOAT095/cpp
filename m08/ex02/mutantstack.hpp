@@ -17,6 +17,8 @@ class MutantStack : std::stack<T>
         MutantStack& operator = (const MutantStack& obj);
         ~MutantStack(void){return ;}
 
-        typedef typename std::stack::container_type::iterator iteraor;
+        typedef typename std::stack::container_type::iterator iterator;
+        iterator    begin();
+        iterator    end();
         
 }

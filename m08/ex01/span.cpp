@@ -48,7 +48,6 @@ int Span::shortestSpan()
 
 int Span::longestSpan()
 {
-    
     if (myVect.empty())
         throw std::exception ();
     std::sort(myVect.begin(), myVect.end());

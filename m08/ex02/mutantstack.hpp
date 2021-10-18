@@ -13,12 +13,12 @@ class MutantStack : std::stack<T>
 {
     public:
         MutantStack(void) : std::stack<T> ();
-        MutantStack(const MutantStack &obj) : std::stack<T> (const std::stack <T>);
+        MutantStack(const MutantStack &obj) : std::stack<T> (obj);
         MutantStack& operator = (const MutantStack& obj);
-        ~MutantStack(void){return ;}
+        ~MutantStack(void){}
 
-        typedef typename std::stack::container_type::iterator iterator;
+        typedef typename std::stack<T>::container_type::iterator iterator;
         iterator    begin();
         iterator    end();
-        
+
 }

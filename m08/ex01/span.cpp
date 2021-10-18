@@ -9,8 +9,9 @@ void    Span::addNumber(int number){
         if (myVect.size() < N)
             myVect.push_back(number);
         else
-            throw std::string ("you reach the size limite\n");
-    } catch (std::string &e){
+            throw std::string ("you have reached the size limite\n");
+    }
+    catch (std::string &e){
         std::cout << e;
     }
 }
@@ -34,6 +35,8 @@ Span& Span::operator = (const Span& obj)
 int Span::shortestSpan()
 {
     int diff = INT_MAX;
+    if (myVect.empty())
+        throw std::exception ();
     std::sort(myVect.begin(), myVect.end());
     for (size_t i = 0; i < myVect.size() - 1; i++)
     {
@@ -45,6 +48,9 @@ int Span::shortestSpan()
 
 int Span::longestSpan()
 {
+    
+    if (myVect.empty())
+        throw std::exception ();
     std::sort(myVect.begin(), myVect.end());
     return myVect[myVect.size() - 1] - myVect[0];
 }

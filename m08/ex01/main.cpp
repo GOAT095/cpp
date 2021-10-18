@@ -1,12 +1,30 @@
 #include "span.hpp"
-#include <vector>
-#include <map>
-#include <list>
-<<<<<<< HEAD
-=======
 
 int main()
 {
+    Span sp = Span(5);
+    sp.addNumber(5);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    // sp.addNumber(80); //for error test
 
+    try
+    {
+        std::cout << sp.shortestSpan() << std::endl;
+    }
+    catch(const std::exception & e)
+    {
+        std::cerr << "this bitch empty\n";
+    }
+    try
+    {
+        std::cout << sp.longestSpan() << std::endl;
+    }
+    catch(const std::exception & e)
+    {
+        std::cerr << "this bitch empty\n";
+    }
+    
 }
->>>>>>> 73d0e1a404e48847b9543a477d01ba4970bd8467

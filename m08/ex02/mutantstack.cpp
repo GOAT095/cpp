@@ -1,19 +1,19 @@
 #include "mutantstack.hpp"
 
-
-MutantStack<T>::MutantStack& operator = (const MutantStack& obj)
+/* template <typename T>
+typename MutantStack<T>::MutantStack& operator = (const MutantStack& obj)
 {
-    std::stack::operator = (stack);
+    std::stack::operator = (obj);
     return *this;
 }
 
-
-iterator   MutantStack<T>::being()
-{   
-    return (std::stack::begin());
-}
-
-iterator    MutantStack<T>::end()
+template <typename T>
+typename MutantStack<T>::iterator  MutantStack<T>::begin()
 {
-    return (std::stack::end());
+    return (c.begin());
 }
+template <typename T>
+typename MutantStack<T>::iterator  MutantStack<T>::end()
+{
+    return (c.end());
+} */

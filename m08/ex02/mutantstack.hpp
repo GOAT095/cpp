@@ -8,18 +8,25 @@
 #include <exception>
 #include <stack>
 
-template <typename T>
+template <class T>
 class MutantStack : public std::stack<T>
 {
     public:
-        MutantStack(void) : std::stack<T>() { return ;}
-        MutantStack(const MutantStack &obj) : std::stack<T>(obj) {return ;}
-        MutantStack& operator = (const MutantStack& obj);
+        MutantStack(void){ return ;}
+        MutantStack(const MutantStack &obj) {
+            (void) obj;
+            return ;}
+        MutantStack& operator = (const MutantStack& obj){
+            this->c = obj.c;
+        }
         ~MutantStack(void){
-            return ;
         }
 
         typedef typename std::stack<T>::container_type::iterator iterator;
-        iterator    begin();
-        iterator    end();
+        iterator    begin(){
+            return this->c.begin();
+        }
+        iterator    end(){
+            return this->c.end();
+        }
 };

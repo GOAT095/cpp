@@ -14,10 +14,10 @@ class MutantStack : public std::stack<T>
     public:
         MutantStack(void){ return ;}
         MutantStack(const MutantStack &obj) {
-            (void) obj;
-            return ;}
+            *this = obj;}
         MutantStack& operator = (const MutantStack& obj){
             this->c = obj.c;
+            return *this;
         }
         ~MutantStack(void){
         }

@@ -23,5 +23,9 @@ int main()
     ++it;
     }
     std::stack<int> s(mstack);
+    MutantStack<int> a(mstack);
+    MutantStack<int>::iterator itt = a.begin();
+    ++itt;
+    std::cout << *itt << std::endl;
     return 0;
 }

@@ -4,17 +4,7 @@ Span::Span(unsigned int n) : N(n){
     Size = myVect.size();
 }
 
-void    Span::addNumber(int number){
-    try{
-        if (myVect.size() < N)
-            myVect.push_back(number);
-        else
-            throw std::string ("you have reached the size limite\n");
-    }
-    catch (std::string &e){
-        std::cout << e;
-    }
-}
+
 
 Span::Span(const Span& obj)
 {
@@ -32,6 +22,17 @@ Span& Span::operator = (const Span& obj)
     return *this;
 }
 
+void    Span::addNumber(int number){
+    try{
+        if (myVect.size() < N)
+            myVect.push_back(number);
+        else
+            throw std::string ("you have reached the size limite\n");
+    }
+    catch (std::string &e){
+        std::cout << e;
+    }
+}
 int Span::shortestSpan()
 {
     int diff = INT_MAX;
